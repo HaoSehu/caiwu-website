@@ -30,12 +30,14 @@ jobs:
       - uses: actions/checkout@v4
 
       # 演练版三端源码在后端仓库（公开）。固定 ref checkout 到 ./caiwu。
-      # 拉取失败时后续 demo:build 会以「缺少 dist-demo」报错，而不是静默发布空目录。
+      # 这一步失败时见下方 Build frontend demos 的报错，不会静默发布空目录。
       - uses: actions/checkout@v4
+        id: caiwu
         with:
           repository: HaoSehu/caiwu
           ref: ${{ env.CAIWU_REF }}
           path: caiwu
+        continue-on-error: true
 
       - uses: actions/setup-node@v4
         with:
@@ -46,19 +48,44 @@ jobs:
 
       # caiwu 是 npm workspaces 仓库，三端 demo 构建需要其自身依赖。
       - name: Install caiwu dependencies
+        if: steps.caiwu.outcome == 'success'
         working-directory: caiwu
         run: npm ci
 
       - name: Build
         run: npm run build
 
+      # 演练版与官网同域发布在 /demo/。
+      # 站点发布不依赖演练版：caiwu 的该 ref 尚无 build:demo 脚本时跳过并在日志标明，
+      # 避免一次演示构建把官网与教程一起卡住；脚本就绪后会照常构建。
+      - name: Check demo build availability
+        id: democheck
+        if: steps.caiwu.outcome == 'success'
+        working-directory: caiwu
+        run: |
+          if node -e "const p=require('./frontend-admin-v3/package.json');process.exit(p.scripts&&p.scripts['build:demo']?0:1)"; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=演练版跳过::HaoSehu/caiwu@${CAIWU_REF} 的 frontend-admin-v3 没有 build:demo 脚本，本次不生成 /demo/。把含该脚本的提交推送到 caiwu 后重跑即会构建。"
+          fi
+
       - name: Build frontend demos
+        if: steps.democheck.outputs.available == 'true'
         run: npm run demo:build -- --caiwu ./caiwu --skip-site-build
+
+      - name: Explain missing caiwu checkout
+        if: steps.caiwu.outcome != 'success'
+        run: |
+          echo "::warning title=演练版跳过::无法从 HaoSehu/caiwu@${CAIWU_REF} 拉取源码，本次不生成 /demo/。"
+          echo "检查 CAIWU_REF 是否为该仓库存在的分支名。"
 
       # GitHub Pages 对未匹配路径返回 404.html；用同一份入口接管，
       # 让 /features 这类直接访问或刷新由 vue-router 渲染而不是真 404。
       # 同时写入 CNAME，保证每次部署都保留自定义域名绑定。
       # 注意：演练版三端 SPA 用 hash 路由，不依赖这份回退。
+      # 演练版源码已拉取但尚未提供 build:demo 时，dist/demo 可能不存在；
+      # 下面只处理站点级文件，不假设 demo 目录。
       - name: SPA fallback
         run: |
           cp dist/index.html dist/404.html
