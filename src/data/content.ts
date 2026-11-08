@@ -133,7 +133,7 @@ export const nav = [
   { id: 'home', label: '概览', to: '/' },
   { id: 'features', label: '产品能力', to: '/features' },
   { id: 'architecture', label: '技术架构', to: '/architecture' },
-  { id: 'devguide', label: '开发者指南', to: '/devguide' },
+  { id: 'devguide', label: '开发者文档', to: '/devguide' },
   { id: 'demo', label: '实时预览', to: '/demo' },
   { id: 'compare', label: '方案对比', to: '/compare' },
   { id: 'scenarios', label: '适用场景', to: '/scenarios' },

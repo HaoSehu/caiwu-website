@@ -40,7 +40,7 @@ const columns = [
   {
     title: '文档',
     links: [
-      { label: '开发者指南', href: '/devguide' },
+      { label: '开发者文档', href: '/devguide' },
       { label: '接口文档', href: brand.apiDocs },
       { label: '架构说明', href: `${brand.repo}/blob/main/docs/ARCHITECTURE.md` },
       { label: '后端约束', href: `${brand.repo}/blob/main/docs/BACKEND.md` },
