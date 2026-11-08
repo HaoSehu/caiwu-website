@@ -1,0 +1,44 @@
+// 静态演练版（真实前端构建产物）的访问地址与说明。
+// 构建产物来自仓库根目录的 `npm run build:demo`，由 frontend-demo/dist/serve.mjs 提供服务。
+
+const isLocal = typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+
+/** 演练版入口页；部署到正式站点时改这里即可 */
+export const demoEntry = isLocal
+  ? 'http://localhost:4314/'
+  : 'https://demo.coyjs.cn/';
+
+export const demoApps = [
+  {
+    key: 'admin',
+    name: '管理后台',
+    url: isLocal ? 'http://localhost:4311/' : 'https://demo.coyjs.cn/admin/',
+    who: '平台运营与财务',
+    desc: '仪表盘、订单与账单、工单、商品定价、插件与调度、权限与日志。',
+    pages: ['仪表盘', '订单管理', '账单管理', '工单', '商品配置', '插件', '调度队列', '权限'],
+  },
+  {
+    key: 'console',
+    name: '用户控制台',
+    url: isLocal ? 'http://localhost:4312/' : 'https://demo.coyjs.cn/console/',
+    who: '客户与开发者',
+    desc: '服务实例、开关机与重装、监控、账单与充值、工单与分销。',
+    pages: ['服务总览', '实例详情', '监控', '账单', '充值', '工单', '分销'],
+  },
+  {
+    key: 'www',
+    name: '官网门户',
+    url: isLocal ? 'http://localhost:4313/' : 'https://demo.coyjs.cn/www/',
+    who: '访客与客户',
+    desc: '首页轮播、产品选购与配置、公告与帮助中心。',
+    pages: ['首页', '产品列表', '商品详情', '公告', '帮助中心'],
+  },
+];
+
+export const demoNotes = [
+  '展示的是真实前端构建产物，交互、表单、表格、图表与线上一致。',
+  '不连接任何后端：所有请求由构建时打进产物的内存数据集响应，数据均为虚构。',
+  '写操作（下单、支付、修改配置）只在页面内生效，刷新后回到演示初始状态。',
+  'SSH 与 VNC 依赖真实后端与上游，演练版中对应入口只展示界面。',
+  '商品选购可完整走通：选类型 → 选地区 → 选商品 → 配置周期与数量 → 看到合计费用。',
+];

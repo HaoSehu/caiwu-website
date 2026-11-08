@@ -1,0 +1,296 @@
+/*
+ * 设计语言：参照 cn.vuejs.org。
+ * 特征：深色渐变首屏 + 超大标题 + 少量按钮；功能区为「小标题 + 说明」的三栏并列；
+ * 大量留白；代码块采用深色底；页脚为深色多栏。主色取 Vue 品牌绿，
+ * 深色端用其深绿 #35495e 作为基底。
+ */
+
+@font-face {
+  font-family: 'Caiwu Sans';
+  src: url('../assets/fonts/NotoSansSC-sub.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* Vue 品牌绿阶 */
+  --green: #42b883;
+  --green-light: #42d392;
+  --green-lighter: #35eb9a;
+  --green-dark: #33a06f;
+  --green-darker: #155f3e;
+  --deep: #35495e;
+  --deep-2: #2b3d50;
+  --deep-3: #1f2d3d;
+
+  --white: #ffffff;
+  --white-soft: #f9f9f9;
+  --white-mute: #f1f1f1;
+  --indigo: #213547;
+  --indigo-soft: #476582;
+  --gray: #8e8e8e;
+  --gray-light: #aeaeae;
+  --gray-light-2: #c7c7c7;
+  --gray-light-4: #e5e5e5;
+  --gray-light-5: #f2f2f2;
+  --gray-dark-2: #484848;
+
+  --text-1: #213547;
+  --text-2: #476582;
+  --text-3: #8e8e8e;
+  --text-inv-1: rgba(255, 255, 255, 1);
+  --text-inv-2: rgba(255, 255, 255, 0.86);
+  --text-inv-3: rgba(255, 255, 255, 0.6);
+
+  --divider: #e2e2e3;
+  --divider-dark: rgba(255, 255, 255, 0.14);
+
+  --code-bg: #282c34;
+  --code-bg-2: #22262e;
+
+  --font-sans: 'Caiwu Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'SF Mono', Monaco, Menlo, Consolas, 'Courier New', monospace;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --s9: 96px;
+  --s10: 140px;
+
+  --measure: 1152px;
+  --ease: cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text-1);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--text-1);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+code,
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.wrap {
+  width: min(var(--measure), 100% - 64px);
+  margin-inline: auto;
+}
+
+/* 区块：大留白，靠间距分层，不用卡片堆叠 */
+.section {
+  padding-block: var(--s10);
+}
+
+/* 紧接页面标题区的首个 section：压缩顶部留白 */
+.page-head + .section {
+  padding-top: var(--s7);
+}
+
+.section + .section {
+  padding-top: var(--s9);
+}
+
+.section--soft {
+  background: var(--white-soft);
+}
+
+.section--dark {
+  background: var(--deep-3);
+  color: var(--text-inv-1);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--white);
+}
+
+/* 区块头：左对齐（Vue 官网首页特点区即左对齐） */
+.block-head h2 {
+  font-size: clamp(26px, 2.6vw, 36px);
+  letter-spacing: -0.02em;
+}
+
+.block-head p {
+  margin-top: var(--s3);
+  max-width: 68ch;
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--text-2);
+}
+
+.section--dark .block-head p {
+  color: var(--text-inv-2);
+}
+
+/* 按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding-inline: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 22px;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.2s var(--ease);
+}
+
+.btn--green {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn--green:hover {
+  background: var(--green-dark);
+}
+
+.btn--ghost-dark {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+.btn--ghost-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn--ghost {
+  border: 1px solid var(--divider);
+  color: var(--text-1);
+}
+
+.btn--ghost:hover {
+  border-color: var(--green);
+  color: var(--green-darker);
+}
+
+/* 代码块（Vue 官网标志性的深色底） */
+.code {
+  background: var(--code-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.85;
+}
+
+.code__tabs {
+  display: flex;
+  gap: 0;
+  background: var(--code-bg-2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.code__tab {
+  padding: 9px 16px;
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.code__tab:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.code__tab.is-active {
+  color: #fff;
+  border-bottom-color: var(--green);
+}
+
+.code pre {
+  margin: 0;
+  padding: var(--s4) var(--s5);
+  overflow-x: auto;
+  color: #d4d4d4;
+  white-space: pre;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+
+  .section {
+    padding-block: var(--s8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
