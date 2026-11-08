@@ -41,6 +41,8 @@ const columns = [
     title: '文档',
     links: [
       { label: '使用文档', href: '/userguide' },
+      { label: '安装与部署', href: '/install' },
+      { label: '新手引导', href: '/beginner' },
       { label: '开发者文档', href: '/devguide' },
       { label: '接口文档', href: brand.apiDocs },
       { label: '架构说明', href: `${brand.repo}/blob/main/docs/ARCHITECTURE.md` },

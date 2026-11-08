@@ -24,6 +24,71 @@ const routes = [
     component: () => import('./pages/ScenariosPage.vue'),
   },
   {
+    path: '/install',
+    name: 'install',
+    component: () => import('./pages/InstallPage.vue'),
+  },
+  {
+    path: '/install/requirements',
+    name: 'install-requirements',
+    component: () => import('./pages/install/RequirementsPage.vue'),
+  },
+  {
+    path: '/install/sites',
+    name: 'install-sites',
+    component: () => import('./pages/install/SitesPage.vue'),
+  },
+  {
+    path: '/install/backend',
+    name: 'install-backend',
+    component: () => import('./pages/install/BackendPage.vue'),
+  },
+  {
+    path: '/install/frontend',
+    name: 'install-frontend',
+    component: () => import('./pages/install/FrontendPage.vue'),
+  },
+  {
+    path: '/install/schedule',
+    name: 'install-schedule',
+    component: () => import('./pages/install/SchedulePage.vue'),
+  },
+  {
+    path: '/install/firstrun',
+    name: 'install-firstrun',
+    component: () => import('./pages/install/FirstRunPage.vue'),
+  },
+  {
+    path: '/install/troubleshoot',
+    name: 'install-troubleshoot',
+    component: () => import('./pages/install/TroubleshootPage.vue'),
+  },
+  {
+    path: '/install/checklist',
+    name: 'install-checklist',
+    component: () => import('./pages/install/ChecklistPage.vue'),
+  },
+  {
+    path: '/beginner',
+    name: 'beginner',
+    component: () => import('./pages/BeginnerPage.vue'),
+  },
+  {
+    path: '/beginner/onboarding',
+    name: 'beginner-onboarding',
+    component: () => import('./pages/beginner/OnboardingPage.vue'),
+  },
+  {
+    path: '/beginner/settings',
+    name: 'beginner-settings',
+    component: () => import('./pages/beginner/SettingsPage.vue'),
+  },
+  {
+    path: '/beginner/daily',
+    name: 'beginner-daily',
+    component: () => import('./pages/beginner/DailyPage.vue'),
+  },
+  {
     path: '/userguide',
     name: 'userguide',
     component: () => import('./pages/UserGuidePage.vue'),

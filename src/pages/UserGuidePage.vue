@@ -21,6 +21,19 @@
             </div>
           </div>
 
+          <div class="companion">
+            <RouterLink to="/beginner" class="companion__card">
+              <span class="companion__kicker">配套</span>
+              <strong>新手引导</strong>
+              <span>上线后的首批配置顺序，以及系统设置、验证码、站务与运营日常。</span>
+            </RouterLink>
+            <RouterLink to="/install" class="companion__card">
+              <span class="companion__kicker">配套</span>
+              <strong>安装与部署</strong>
+              <span>从空服务器装起来：宝塔、站点、.env、前端构建、定时任务与检查清单。</span>
+            </RouterLink>
+          </div>
+
           <div class="idx">
             <RouterLink v-for="d in userguideIndex" :key="d.to" :to="d.to" class="idx__card">
               <span class="idx__no">{{ d.kicker }}</span>
@@ -98,6 +111,46 @@ const roleHints = [
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--s4);
   margin-top: var(--s6);
+}
+
+.companion {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s4);
+  margin-top: var(--s5);
+}
+
+.companion__card {
+  display: block;
+  padding: var(--s4) var(--s5);
+  border: 1px dashed var(--divider);
+  border-radius: 6px;
+  transition: border-color 0.22s var(--ease);
+}
+
+.companion__card:hover {
+  border-color: var(--green);
+}
+
+.companion__kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+}
+
+.companion__card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.companion__card span:last-child {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-2);
 }
 
 .idx__card {
