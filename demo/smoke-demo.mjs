@@ -41,15 +41,28 @@ const APPS = [
 
 const failures = [];
 
+// 「不连后端」的判定只针对后端 API 源站：TDesign 图标字体走官方 CDN，
+// 属于 UI 框架默认行为，不是业务请求。
+const BACKEND_HOSTS = ['api.coyjs.cn', 'api.cixx.cn', '127.0.0.1:8000', 'localhost:8000'];
+
+function isBackendRequest(url) {
+  try {
+    const { host } = new URL(url);
+    return BACKEND_HOSTS.some((blocked) => host === blocked || url.includes(blocked));
+  } catch {
+    return false;
+  }
+}
+
 async function checkApp(browser, app) {
   const page = await browser.newPage();
-  const externalRequests = [];
+  const backendRequests = [];
   const consoleErrors = [];
 
   page.on('request', (request) => {
     const url = request.url();
-    if (!url.startsWith(ORIGIN) && !url.startsWith('data:') && !url.startsWith('blob:')) {
-      externalRequests.push(url);
+    if (isBackendRequest(url)) {
+      backendRequests.push(url);
     }
   });
   page.on('console', (message) => {
@@ -76,8 +89,8 @@ async function checkApp(browser, app) {
       }
     }
 
-    if (externalRequests.length > 0) {
-      failures.push(`${app.key}: 发出 ${externalRequests.length} 个外部请求，首个为 ${externalRequests[0]}`);
+    if (backendRequests.length > 0) {
+      failures.push(`${app.key}: 打到后端 ${backendRequests.length} 次，首个为 ${backendRequests[0]}`);
     }
 
     const fatal = consoleErrors.filter(
@@ -88,7 +101,7 @@ async function checkApp(browser, app) {
     }
 
     console.log(
-      `[${app.key}] 内容 ${textLength} 字符，外部请求 ${externalRequests.length}，` +
+      `[${app.key}] 内容 ${textLength} 字符，后端请求 ${backendRequests.length}，` +
         `控制台错误 ${consoleErrors.length}${fatal.length ? '（含致命）' : ''}`
     );
   } catch (error) {
