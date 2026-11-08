@@ -16,7 +16,9 @@ Caiwu 业务财务系统的产品介绍站（品牌「创欧云」），面向 I
 
 站点是纯静态页：`npm run build` 产出 `dist/`，直接扔到任意静态托管，**没有任何后端接口、环境变量或构建期注入**。页面数据全部编译进 JS，新增数据也走 `content.ts`，不要引入 `fetch` 或运行时配置。"实时预览"页只是外链到 `demo.coyjs.cn`，不在本站内嵌。
 
-路由用的是 `createWebHistory`（无 `#`），所以托管方必须把所有路径回退到 `index.html`，否则 `/features` 这类直接访问或刷新会 404。目前仓库里没有 `_redirects` / `vercel.json` / `404.html` 之类的配置；部署到不自动处理 SPA 回退的服务器时要补上。`dist/` 是构建产物，会随 `npm run build` 整体重写，不要手改。
+路由用的是 `createWebHistory`（无 `#`），所以托管方必须把所有路径回退到 `index.html`，否则 `/features` 这类直接访问或刷新会 404。构建时 `vite.config.ts` 的 `base` 是 `/`，仓库里的 `public/CNAME` 声明站点域名 `www.cixx.cn`，`dist/404.html` 由 CI 复制入口页生成供 Pages 回退；`public/_headers` 是 CDN/Netlify 系托管可识别的缓存与安全头配置，其他托管会忽略它。`dist/` 是构建产物，会随 `npm run build` 整体重写，不要手改。
+
+部署链路：push 到 `main` → GitHub Actions（`.github/workflows/deploy-pages.yml`）构建并发布到 GitHub Pages → 自定义域名 `www.cixx.cn` 由 DNSPod 的 CNAME 指向 `haosehu.github.io`，CDN 层再套在这个域名前面。换域名要同时改 `public/CNAME`、`index.html` 的 canonical/og:url、`content.ts` 的 `brand.domain` 三处。
 
 ## 视觉规则
 

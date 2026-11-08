@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  // 部署在 GitHub Pages 的项目子路径下；换成自定义域名时改为 '/'。
-  base: process.env.BASE_PATH ?? '/caiwu-website/',
+  // 站点部署在自定义域名根路径（www.cixx.cn）。
+  // 若改回 GitHub Pages 项目页（/caiwu-website/ 子路径），把这里改回子路径。
+  base: '/',
   plugins: [vue()],
   server: {
     port: 5190,

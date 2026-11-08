@@ -3,7 +3,7 @@
 export const brand = {
   name: '创欧云',
   product: 'Caiwu 业务财务系统',
-  domain: 'www.coyjs.cn',
+  domain: 'www.cixx.cn',
   tagline: '面向 IDC 与云服务商的业务与财务经营系统',
   repo: 'https://github.com/HaoSehu/caiwu',
   repoLabel: 'HaoSehu/caiwu',

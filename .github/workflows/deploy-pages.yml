@@ -29,13 +29,15 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}/
 
       # GitHub Pages 对未匹配路径返回 404.html；用同一份入口接管，
       # 让 /features 这类直接访问或刷新由 vue-router 渲染而不是真 404。
+      # 同时写入 CNAME，保证每次部署都保留自定义域名绑定。
       - name: SPA fallback
-        run: cp dist/index.html dist/404.html && touch dist/.nojekyll
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+          echo "www.cixx.cn" > dist/CNAME
 
       - uses: actions/configure-pages@v5
 

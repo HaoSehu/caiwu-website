@@ -6,10 +6,12 @@
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev      # http://localhost:5190
 npm run build    # 产物在 dist/
 npm run preview
 ```
+
+线上地址：https://www.cixx.cn （GitHub Pages + 自定义域名，push 到 `main` 自动部署）。
 
 技术栈：Vue 3 + Vite + TypeScript，无 UI 框架依赖，纯手写样式。
 
