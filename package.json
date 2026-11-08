@@ -7,9 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "demo:build": "node console-demo/scripts/install_frontend_demo.mjs",
-    "demo:serve": "node console-demo/dist/serve.mjs",
-    "demo:data": "cd ../caiwu && npm run demo:data"
+    "demo:build": "node demo/build-demo.mjs",
+    "demo:serve": "node demo/serve.mjs"
   },
   "dependencies": {
     "vue": "^3.5.18",

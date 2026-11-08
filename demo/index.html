@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创欧云 Caiwu 演练版</title>
+    <meta name="description" content="创欧云 Caiwu 业务财务系统的三端静态演练版：管理后台、用户控制台与官网门户。不连接后端，数据均为虚构。" />
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #1e293b;
+        --line: #334155;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --green: #42b883;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 600px at 50% -10%, #1e3a5f 0%, var(--bg) 55%);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px;
+      }
+      main { width: min(1080px, 100%); }
+      h1 {
+        font-size: clamp(28px, 4vw, 44px);
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+      }
+      .lead {
+        color: var(--muted);
+        margin: 0 0 36px;
+        line-height: 1.7;
+        max-width: 720px;
+      }
+      .apps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .app {
+        display: block;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 24px;
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+      }
+      .app:hover { border-color: var(--green); transform: translateY(-2px); }
+      .app h2 { margin: 0 0 8px; font-size: 20px; }
+      .app .who { color: var(--green); font-size: 13px; margin: 0 0 12px; }
+      .app p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }
+      footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>创欧云 Caiwu 演练版</h1>
+      <p class="lead">
+        下面三端都是真实前端构建产物，不是截图。不连接任何后端：所有请求由随站点发布的静态数据集响应，
+        数据均为虚构；写操作只在页面内生效，刷新后回到演示初始状态。
+      </p>
+
+      <div class="apps">
+        <a class="app" href="./admin/">
+          <h2>管理后台</h2>
+          <p class="who">平台运营与财务</p>
+          <p>仪表盘、订单与账单、工单、商品定价、插件与调度、权限与日志。</p>
+        </a>
+        <a class="app" href="./console/">
+          <h2>用户控制台</h2>
+          <p class="who">客户与开发者</p>
+          <p>服务实例、开关机与重装、监控、账单与充值、工单与分销。</p>
+        </a>
+        <a class="app" href="./www/">
+          <h2>官网门户</h2>
+          <p class="who">访客与客户</p>
+          <p>首页轮播、产品选购与配置、公告与帮助中心。</p>
+        </a>
+      </div>
+
+      <footer>
+        演练版不含真实客户数据：账号、订单、工单与金额均已脱敏或虚构。
+        SSH 与 VNC 依赖真实后端，演练版中对应入口只展示界面。
+      </footer>
+    </main>
+  </body>
+</html>
