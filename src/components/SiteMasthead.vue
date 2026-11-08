@@ -214,6 +214,21 @@ onBeforeUnmount(() => {
   margin-left: auto;
 }
 
+/* 导航项到九个之后，中等宽度下先收紧链接间距，再收字号 */
+@media (max-width: 1180px) {
+  .nav__inner {
+    gap: var(--s4);
+  }
+
+  .nav__links {
+    gap: var(--s3);
+  }
+
+  .nav__links a {
+    font-size: 13.5px;
+  }
+}
+
 .nav__links a {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.78);

@@ -24,6 +24,61 @@ const routes = [
     component: () => import('./pages/ScenariosPage.vue'),
   },
   {
+    path: '/userguide',
+    name: 'userguide',
+    component: () => import('./pages/UserGuidePage.vue'),
+  },
+  {
+    path: '/userguide/start',
+    name: 'userguide-start',
+    component: () => import('./pages/userguide/StartPage.vue'),
+  },
+  {
+    path: '/userguide/catalog',
+    name: 'userguide-catalog',
+    component: () => import('./pages/userguide/CatalogPage.vue'),
+  },
+  {
+    path: '/userguide/order',
+    name: 'userguide-order',
+    component: () => import('./pages/userguide/OrderPage.vue'),
+  },
+  {
+    path: '/userguide/finance',
+    name: 'userguide-finance',
+    component: () => import('./pages/userguide/FinancePage.vue'),
+  },
+  {
+    path: '/userguide/service',
+    name: 'userguide-service',
+    component: () => import('./pages/userguide/ServicePage.vue'),
+  },
+  {
+    path: '/userguide/marketing',
+    name: 'userguide-marketing',
+    component: () => import('./pages/userguide/MarketingPage.vue'),
+  },
+  {
+    path: '/userguide/site',
+    name: 'userguide-site',
+    component: () => import('./pages/userguide/SitePage.vue'),
+  },
+  {
+    path: '/userguide/system',
+    name: 'userguide-system',
+    component: () => import('./pages/userguide/SystemPage.vue'),
+  },
+  {
+    path: '/userguide/logs',
+    name: 'userguide-logs',
+    component: () => import('./pages/userguide/LogsPage.vue'),
+  },
+  {
+    path: '/userguide/faq',
+    name: 'userguide-faq',
+    component: () => import('./pages/userguide/FaqPage.vue'),
+  },
+  {
     path: '/devguide',
     name: 'devguide',
     component: () => import('./pages/DevGuidePage.vue'),
