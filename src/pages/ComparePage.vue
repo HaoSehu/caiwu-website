@@ -3,7 +3,7 @@
     <PageHead
       kicker="Comparison"
       title="方案对比"
-      lead="不评价具体商业产品，只比较结构性差异：这些差异决定了系统在出现退款、部分付款、换供应商或升级数据库时会不会出问题。"
+      lead="八个结构性维度上的设计取舍：对象边界、资金记录、删除语义、第三方接入、长任务隔离、权限模型、接口契约与数据升级。每一维度都对应代码里的具体约束。"
     />
 
     <section class="section">
@@ -12,7 +12,7 @@
           <div class="matrix__head">
             <div class="col-dim">维度</div>
             <div class="col-caiwu">Caiwu 的做法</div>
-            <div class="col-common">常见做法</div>
+            <div class="col-common">另一种做法</div>
           </div>
 
           <div v-for="row in compareDimensions" :key="row.dimension" class="matrix__row">
@@ -34,20 +34,20 @@
     <section class="section section--soft">
       <div class="wrap">
         <header class="head head--dark">
-          <h2>同一笔退款，两种处理</h2>
-          <p>退款是最容易把账搞乱的场景：钱要退、服务要停、分销奖励要冲回、报表要能解释。下面是两种典型做法的差别。</p>
+          <h2>一笔退款的处理路径</h2>
+          <p>退款要同时处理四件事：退钱、停服务、冲回分销奖励、让报表可解释。Caiwu 的选择是只追加、不改历史。</p>
         </header>
 
         <div class="cases">
           <article class="case case--bad">
-            <h3>把状态改回去</h3>
+            <h3>改写历史状态</h3>
             <ol>
               <li>把订单状态改成「已退款」</li>
               <li>把账单金额改成 0</li>
               <li>删掉或改写原支付记录</li>
               <li>奖励金额手动减掉</li>
             </ol>
-            <p class="case__result">结果：历史被覆盖。三个月后问「这笔钱到底退了多少」，只能靠人回忆；对账时平台记录与渠道流水对不上。</p>
+            <p class="case__result">后果：原始记录被覆盖，任一时点都无法从数据重算「这笔钱到底退了多少」，对账时平台记录与渠道流水对不上。</p>
           </article>
 
           <article class="case case--good">
@@ -58,7 +58,7 @@
               <li>台账写一条 <code>invoice_refund</code> 事件</li>
               <li>分销写一条 <code>reward_reversed</code> 事件</li>
             </ol>
-            <p class="case__result">结果：任何时点的余额都能由事件重算；退款、冲正、奖励反转各自留痕，审计链不断。</p>
+            <p class="case__result">结果：任何时点的余额都能由事件重算；退款、冲正、奖励反转各自留痕，审计链不断。<strong>这是 Caiwu 采用的路径。</strong></p>
           </article>
         </div>
       </div>

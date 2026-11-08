@@ -133,6 +133,7 @@ export const nav = [
   { id: 'home', label: '概览', to: '/' },
   { id: 'features', label: '产品能力', to: '/features' },
   { id: 'architecture', label: '技术架构', to: '/architecture' },
+  { id: 'devguide', label: '开发者指南', to: '/devguide' },
   { id: 'demo', label: '实时预览', to: '/demo' },
   { id: 'compare', label: '方案对比', to: '/compare' },
   { id: 'scenarios', label: '适用场景', to: '/scenarios' },
@@ -141,9 +142,27 @@ export const nav = [
 
 // 对外入口
 export const resources = [
-  { label: '接口文档', value: 'caiwu-api.apifox.cn', href: 'https://caiwu-api.apifox.cn', desc: 'Apifox 托管的完整接口清单与数据结构' },
-  { label: '代码仓库', value: 'github.com/HaoSehu/caiwu', href: 'https://github.com/HaoSehu/caiwu', desc: 'AGPL-3.0 开源，含架构、后端、前端与数据库约束文档' },
-  { label: '开发者交流群', value: 'QQ 群 994857138', href: 'https://qm.qq.com/q/se4JU0fz7U', desc: '使用问题、部署经验与需求讨论' },
+  {
+    label: '接口文档',
+    value: 'caiwu-api.apifox.cn',
+    href: 'https://caiwu-api.apifox.cn',
+    desc: 'Apifox 托管的完整接口清单与数据结构',
+    icon: 'api' as const,
+  },
+  {
+    label: '代码仓库',
+    value: 'github.com/HaoSehu/caiwu',
+    href: 'https://github.com/HaoSehu/caiwu',
+    desc: 'AGPL-3.0 开源，含架构、后端、前端与数据库约束文档',
+    icon: 'github' as const,
+  },
+  {
+    label: '开发者交流群',
+    value: 'QQ 群 994857138',
+    href: 'https://qm.qq.com/q/se4JU0fz7U',
+    desc: '使用问题、部署经验与需求讨论',
+    icon: 'qq' as const,
+  },
 ]
 
 /* ===================== 方案对比 ===================== */

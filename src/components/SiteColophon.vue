@@ -22,7 +22,7 @@
       </div>
 
       <div class="foot__base">
-        <span>本站为 {{ brand.product }} 的介绍站点，内容以实际运行版本为准。</span>
+        <span>{{ brand.product }} · {{ brand.tagline }}</span>
         <span class="num">{{ brand.domain }}</span>
       </div>
     </div>
@@ -35,11 +35,12 @@ import { brand, nav } from '../data/content'
 const columns = [
   {
     title: '本站',
-    links: nav.map((item) => ({ label: item.label, href: `#${item.id}` })),
+    links: nav.map((item) => ({ label: item.label, href: item.to })),
   },
   {
     title: '文档',
     links: [
+      { label: '开发者指南', href: '/devguide' },
       { label: '接口文档', href: brand.apiDocs },
       { label: '架构说明', href: `${brand.repo}/blob/main/docs/ARCHITECTURE.md` },
       { label: '后端约束', href: `${brand.repo}/blob/main/docs/BACKEND.md` },
