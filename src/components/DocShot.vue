@@ -1,7 +1,7 @@
 <template>
   <figure class="shot">
-    <a :href="`/shots/${src}`" target="_blank" rel="noreferrer noopener" class="shot__link">
-      <img :src="`/shots/${src}`" :alt="alt" loading="lazy" decoding="async" />
+    <a :href="url" target="_blank" rel="noreferrer noopener" class="shot__link">
+      <img :src="url" :alt="alt" loading="lazy" decoding="async" />
     </a>
     <figcaption>
       <span class="shot__caption">{{ caption }}</span>
@@ -11,11 +11,18 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+// 截图会随教程迭代更新，文件名不变；带上构建版本号避免 CDN 命中旧图。
+const IMAGE_REV = '20261109a'
+
+const props = defineProps<{
   src: string
   alt: string
   caption: string
 }>()
+
+const url = computed(() => `/shots/${props.src}?v=${IMAGE_REV}`)
 </script>
 
 <style scoped>
