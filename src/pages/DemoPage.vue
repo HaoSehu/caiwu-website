@@ -257,5 +257,34 @@ function reload() {
   .frame iframe {
     height: 70vh;
   }
+
+  /* 手机上一行放不下三个 tab 加两个按钮，改成整行平铺，点按面积更大 */
+  .bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--s3);
+  }
+
+  .bar__tabs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .bar__tabs button {
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .bar__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bar__btn {
+    text-align: center;
+    padding-block: 11px;
+  }
 }
 </style>
