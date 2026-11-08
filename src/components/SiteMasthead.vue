@@ -76,6 +76,7 @@
       id="nav-menu"
       class="nav__menu"
       :class="{ 'is-open': menuOpen }"
+      :data-open="menuOpen ? 'true' : 'false'"
     >
       <nav class="wrap nav__menu-inner" aria-label="移动端页面导航">
         <RouterLink
@@ -369,8 +370,9 @@ onBeforeUnmount(() => {
   background: var(--white);
   border-bottom: 1px solid var(--divider);
   box-shadow: 0 18px 40px rgba(33, 53, 71, 0.12);
-  /* 纯 CSS 过渡：面板始终在 DOM 中，由 .is-open 控制显隐，
-     避免入场动画未完成时元素已可交互、把触摸事件吃掉 */
+  /* 抽屉常驻 DOM：普通状态完全不可见且不接收事件，
+     展开时才切换为可见可点。这样即便过渡动画没跑完，
+     也不会出现「看不见却挡住页面」的状态。 */
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
@@ -379,7 +381,10 @@ onBeforeUnmount(() => {
     visibility 0s linear 0.24s;
 }
 
-.nav__menu.is-open {
+/* 展开态同时兼容类名与 data-open 属性：
+   即便 .is-open 因样式作用域或缓存未命中，属性选择器仍能保证抽屉可用。 */
+.nav__menu.is-open,
+.nav__menu[data-open='true'] {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -393,6 +398,8 @@ onBeforeUnmount(() => {
   padding-block: var(--s3) var(--s5);
 }
 
+/* 菜单项：显式声明可点击并禁用双击缩放，
+   避免 iOS 上 300ms 延迟或触摸手势被浏览器接管 */
 .nav__menu-inner a {
   display: flex;
   align-items: center;
@@ -402,6 +409,10 @@ onBeforeUnmount(() => {
   color: var(--text-1);
   border-bottom: 1px solid var(--divider);
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .nav__menu-inner a:last-child {
