@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "port": 5190,
       "cwd": "D:\\caiwu-website"
+    },
+    {
+      "name": "caiwu-site-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--", "--port", "5191", "--strictPort"],
+      "port": 5191,
+      "cwd": "D:\\caiwu-website"
     }
   ]
 }
