@@ -29,14 +29,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 演练版三端源码在后端仓库（公开）。固定 ref checkout 到 ./caiwu。
-      # 这一步失败时见下方 Build frontend demos 的报错，不会静默发布空目录。
+      # 演练版三端源码在后端仓库 HaoSehu/caiwu（私有仓库）。
+      # 用专用只读 deploy key（SSH）拉取：默认 GITHUB_TOKEN 无法跨仓读取私有仓库。
+      # 密钥由仓库 Secret CAIWU_DEPLOY_KEY 提供；对应 deploy key 在 caiwu 仓库只读登记。
+      # 固定 ref 到分支名 main；拉取失败时后续步骤会明确告警而不是静默发布空目录。
       - uses: actions/checkout@v4
         id: caiwu
         with:
           repository: HaoSehu/caiwu
           ref: ${{ env.CAIWU_REF }}
           path: caiwu
+          ssh-key: ${{ secrets.CAIWU_DEPLOY_KEY }}
         continue-on-error: true
 
       - uses: actions/setup-node@v4
@@ -47,9 +50,12 @@ jobs:
       - run: npm ci
 
       # caiwu 是 npm workspaces 仓库，三端 demo 构建需要其自身依赖。
+      # HUSKY=0：跳过 prepare 钩子安装（CI 无需本地 git hook）。
       - name: Install caiwu dependencies
         if: steps.caiwu.outcome == 'success'
         working-directory: caiwu
+        env:
+          HUSKY: '0'
         run: npm ci
 
       - name: Build
@@ -91,6 +97,7 @@ jobs:
           cp dist/index.html dist/404.html
           touch dist/.nojekyll
           echo "www.cixx.cn" > dist/CNAME
+          # sitemap.xml / robots.txt 由 npm run build 内的 scripts/gen-seo.mjs 生成
 
       - uses: actions/configure-pages@v5
 
