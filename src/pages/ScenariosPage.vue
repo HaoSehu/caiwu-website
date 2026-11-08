@@ -3,7 +3,7 @@
     <PageHead
       kicker="Scenarios"
       title="适用场景"
-      lead="这套系统的形状由四类使用方决定：机房、云服务商与转售商、建站与代运营团队、自建平台的研发团队。"
+      lead="四类使用方决定系统的形状：机房、云服务商与转售商、建站与代运营团队、自建平台的研发团队。"
     />
 
     <section class="section">
@@ -35,7 +35,7 @@
       <div class="wrap">
         <header class="head">
           <h2>落地需要什么</h2>
-          <p>这套系统是自托管应用，不是开箱即用的托管服务。下面是最小可用配置与推荐配置。</p>
+          <p>自托管应用，不是开箱即用的托管服务。下面是最小可用配置与推荐配置。</p>
         </header>
 
         <div class="reqs">
@@ -69,7 +69,7 @@
       <div class="wrap">
         <header class="head">
           <h2>不适合的场景</h2>
-          <p>把边界说清楚，比一味推销更有用。下面这些情况不建议直接套用。</p>
+          <p>这套系统按单实例自托管设计，下面这些情况不适合直接套用。</p>
         </header>
         <ul class="nots">
           <li v-for="n in notFit" :key="n">{{ n }}</li>

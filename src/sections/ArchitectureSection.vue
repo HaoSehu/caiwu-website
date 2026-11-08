@@ -4,7 +4,8 @@
       <header class="block-head">
         <h2>技术实现</h2>
         <p>
-          Laravel 12 + MySQL 8 + Redis。下面这些不是设计目标，是代码里正在执行的规则。
+          Laravel 12 + MySQL 8 + Redis。接口命名、鉴权链、响应结构、限流、队列与调度各自有固定的落地方式，
+          下面按主题列出具体配置。
         </p>
       </header>
 

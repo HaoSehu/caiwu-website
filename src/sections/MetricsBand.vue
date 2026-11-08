@@ -3,8 +3,8 @@
     <div class="wrap">
       <h2>规模与复杂度</h2>
       <p class="metrics__lead">
-        这些数字不是宣传口径，而是仓库中可直接统计的量：服务域目录数、权限码常量数、
-        台账事件类型数、插件能力域、客户端与迁移文件数。
+        全部可在仓库中直接统计：路由按文件逐条计数，服务域按 app/Services 的目录划分，
+        权限码取自 AdminPermissions 的常量，插件按 plugins/{domain}/{slug} 的目录数计。
       </p>
 
       <div class="metrics__grid">

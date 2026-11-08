@@ -3,7 +3,7 @@
     <PageHead
       kicker="Developer Docs · 08"
       title="测试与验证"
-      lead="改动后先跑受影响的范围，全部完成后跑覆盖本次变更的完整验证。构建带体积门禁，超出即失败。"
+      lead="各端的验证命令、根 workspace 脚本、构建体积门禁与测试分层。"
     />
 
     <DocShell>

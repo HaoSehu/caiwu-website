@@ -61,9 +61,7 @@ export const docIndex = [
 ]
 
 export const docMeta = {
-  version: '当前主分支',
   stack: 'PHP 8.2 · Laravel 12 · Vue 3 · Flutter',
-  entry: 'docs/ 目录是文档唯一真源',
 }
 
 /* ---------------- 快速开始 ---------------- */

@@ -48,15 +48,10 @@
         </div>
 
         <div class="notes">
-          <h3>关于这个预览</h3>
+          <h3>数据与限制</h3>
           <ul>
             <li v-for="note in demoNotes" :key="note">{{ note }}</li>
           </ul>
-          <div class="notes__code">
-            <p>本地构建与启动：</p>
-            <pre><code>npm run build:demo   # 构建三端演练版到 frontend-demo/dist
-npm run demo:serve   # 在 4311 / 4312 / 4313 启动三端，4314 为入口页</code></pre>
-          </div>
         </div>
       </div>
     </section>
@@ -225,32 +220,6 @@ function reload() {
   width: 6px;
   height: 1px;
   background: var(--green);
-}
-
-.notes__code {
-  margin-top: var(--s4);
-}
-
-.notes__code p {
-  font-size: 12.5px;
-  color: var(--text-3);
-  margin-bottom: 6px;
-}
-
-.notes__code pre {
-  margin: 0;
-  background: var(--code-bg);
-  border-radius: 6px;
-  padding: 14px var(--s4);
-  overflow-x: auto;
-}
-
-.notes__code code {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.9;
-  color: #c8f7e0;
-  white-space: pre;
 }
 
 @media (max-width: 768px) {

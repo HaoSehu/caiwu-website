@@ -13,22 +13,22 @@
             <div>
               <h2>从哪开始</h2>
               <p class="lead">
-                第一次接触这个仓库，按 01 → 08 的顺序读；只是查某一条约定，直接从左侧目录跳转。
-                文档的长期真源在仓库 <code>docs/</code> 目录，这里做的是面向开发者的浓缩与索引。
+                按开发环节分为八篇：环境启动、后端分层、接口契约、前端、插件、数据库、部署与验证。
+                第一次接触按 01 → 08 顺序读，查某一条约定直接从左侧目录跳转。
               </p>
             </div>
             <dl class="facts">
-              <div>
-                <dt>适用版本</dt>
-                <dd>{{ docMeta.version }}</dd>
-              </div>
               <div>
                 <dt>技术基线</dt>
                 <dd>{{ docMeta.stack }}</dd>
               </div>
               <div>
-                <dt>文档真源</dt>
-                <dd><code>docs/</code></dd>
+                <dt>接口文档</dt>
+                <dd><a :href="brand.apiDocs" target="_blank" rel="noreferrer noopener">caiwu-api.apifox.cn ↗</a></dd>
+              </div>
+              <div>
+                <dt>代码仓库</dt>
+                <dd><a :href="brand.repo" target="_blank" rel="noreferrer noopener">{{ brand.repoLabel }} ↗</a></dd>
               </div>
             </dl>
           </div>
@@ -60,7 +60,6 @@
           </div>
           <ul class="notes">
             <li>根目录是 npm workspace，只包含三个 Vue 端与 shared；app_flutter 有自己的 pubspec.yaml，不参与根命令。</li>
-            <li>废弃路径 frontend-admin、frontend-client、frontend-user-v3-console、frontend-www-v2、frontend-console-v2、根 scripts、.kiro 均不存在。</li>
             <li>docs/自动生成/ 下的文件由脚本产出，不手工编辑。</li>
           </ul>
         </section>
@@ -74,6 +73,7 @@ import { RouterLink } from 'vue-router'
 import PageHead from '../components/PageHead.vue'
 import DocShell from '../components/DocShell.vue'
 import DocPage from '../components/DocPage.vue'
+import { brand } from '../data/content'
 import { docIndex, docMeta, repoTree } from '../data/devguide'
 </script>
 

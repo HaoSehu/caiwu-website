@@ -12,7 +12,7 @@ export const brand = {
 }
 
 export const heroFacts = [
-  { value: '386', label: '接口路由' },
+  { value: '448', label: '接口路由' },
   { value: '313', label: '后端服务类' },
   { value: '122', label: '数据库迁移' },
   { value: '22', label: '已接入插件' },
@@ -326,11 +326,11 @@ export const deepDives = [
 ]
 
 export const metrics = [
-  { value: '386', label: '接口路由', detail: 'admin 246 · client 121 · site 19' },
+  { value: '448', label: '接口路由', detail: 'admin 304 · client 122 · site 19 · web 3' },
   { value: '313', label: '后端服务类', detail: 'Finance、Order、Provisioning、Upstream 等 23 个业务域' },
-  { value: '67', label: 'API 控制器', detail: '管理端、用户端与站点端分开组织' },
+  { value: '64', label: 'API 控制器', detail: '管理端 38 · 用户端 18 · 站点与公共 8' },
   { value: '122', label: '数据库迁移', detail: '只新增，不改历史迁移' },
-  { value: '66', label: '管理端权限码', detail: '资金写入类单独授权' },
+  { value: '67', label: '管理端权限码', detail: '资金写入类单独授权' },
   { value: '22', label: '已接入插件', detail: '7 个能力域，同一域可替换供应商' },
 ]
 

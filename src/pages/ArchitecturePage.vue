@@ -3,7 +3,7 @@
     <PageHead
       kicker="Architecture"
       title="技术架构"
-      lead="Laravel 12 + MySQL 8 + Redis，四组队列与独立 relay 进程；前端 Vue 3 + Vite + TDesign，App 为 Flutter。下面这些规则都在代码里执行。"
+      lead="Laravel 12 + MySQL 8 + Redis，四组队列与独立 relay 进程；前端 Vue 3 + Vite + TDesign，App 为 Flutter。下面每一项都是代码里正在执行的规则。"
     />
     <ArchitectureSection />
 
@@ -11,7 +11,7 @@
       <div class="wrap">
         <header class="head">
           <h2>六个实现细节</h2>
-          <p>挑六个容易做错、也最能体现这套系统设计取向的地方展开：每一处都写了为什么这样做。</p>
+          <p>六个容易做错、也决定正确性的环节：每一处都写明了规则与原因。</p>
         </header>
 
         <div class="dives">
@@ -39,14 +39,6 @@
           </div>
           <pre><code>{{ deploy }}</code></pre>
         </div>
-
-        <div class="verify">
-          <h3>变更后的最小验证</h3>
-          <div v-for="v in verifyCommands" :key="v.scope" class="verify__row">
-            <code class="verify__scope">{{ v.scope }}</code>
-            <code class="verify__cmd">{{ v.cmd }}</code>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -58,7 +50,7 @@
 import PageHead from '../components/PageHead.vue'
 import ArchitectureSection from '../sections/ArchitectureSection.vue'
 import FinalCta from '../sections/FinalCta.vue'
-import { deepDives, verifyCommands } from '../data/content'
+import { deepDives } from '../data/content'
 
 const deploy = `# 每分钟由 cron 触发
 * * * * * php artisan schedule:run
