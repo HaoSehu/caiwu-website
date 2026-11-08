@@ -21,7 +21,7 @@ concurrency:
 # 演练版构建固定引用的 caiwu 提交。
 # 升级演练版时改这一处；固定 ref 可避免 caiwu main 上进行中的改动破坏官网发布。
 env:
-  CAIWU_REF: 22c96849
+  CAIWU_REF: main
 
 jobs:
   build:
@@ -53,7 +53,7 @@ jobs:
         run: npm run build
 
       - name: Build frontend demos
-        run: npm run demo:build -- --caiwu ./caiwu
+        run: npm run demo:build -- --caiwu ./caiwu --skip-site-build
 
       # GitHub Pages 对未匹配路径返回 404.html；用同一份入口接管，
       # 让 /features 这类直接访问或刷新由 vue-router 渲染而不是真 404。

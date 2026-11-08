@@ -20,7 +20,7 @@ const distRoot = path.join(siteRoot, 'dist');
 const demoDist = path.join(distRoot, 'demo');
 
 function parseArgs(argv) {
-  const options = { caiwuRoot: 'E:/caiwu', skipBuild: false };
+  const options = { caiwuRoot: 'E:/caiwu', skipBuild: false, skipSiteBuild: false };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--caiwu') {
@@ -30,6 +30,8 @@ function parseArgs(argv) {
       options.caiwuRoot = arg.slice('--caiwu='.length);
     } else if (arg === '--skip-build') {
       options.skipBuild = true;
+    } else if (arg === '--skip-site-build') {
+      options.skipSiteBuild = true;
     }
   }
   return options;
@@ -54,9 +56,25 @@ function copyDir(source, target) {
 
 const options = parseArgs(process.argv.slice(2));
 const caiwuRoot = path.resolve(options.caiwuRoot);
+const npmBin = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+
+// dist/ 会被官网 npm run build 整体重写；本脚本每次都自己重建官网产物，
+// 否则任何一次 build 都会把上一轮的 dist/demo 冲掉（截图脚本、CI 都会触发）。
+if (!options.skipSiteBuild) {
+  console.log('构建官网主站...');
+  const siteBuild = spawnSync(npmBin, ['run', 'build'], {
+    cwd: siteRoot,
+    stdio: 'inherit',
+    shell: process.platform === 'win32',
+  });
+  if (siteBuild.status !== 0) {
+    console.error(`官网构建失败（exit ${siteBuild.status}）`);
+    process.exit(1);
+  }
+}
 
 if (!existsSync(distRoot)) {
-  console.error('dist/ 不存在，请先运行 npm run build。');
+  console.error('dist/ 不存在，官网构建未产出产物。');
   process.exit(1);
 }
 
@@ -82,8 +100,7 @@ if (!options.skipBuild) {
 
   for (const [app, workspace] of Object.entries(workspaces)) {
     console.log(`构建 ${app} (${workspace})...`);
-    const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-    const result = spawnSync(npm, ['run', 'build:demo', '--workspace', workspace], {
+    const result = spawnSync(npmBin, ['run', 'build:demo', '--workspace', workspace], {
       cwd: caiwuRoot,
       stdio: 'inherit',
       shell: process.platform === 'win32',
