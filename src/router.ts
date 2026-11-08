@@ -238,7 +238,7 @@ const routes = [
     name: 'start',
     component: () => import('./pages/StartPage.vue'),
   },
-  { path: '/:pathMatch(.*)*', redirect: '/' },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('./pages/NotFoundPage.vue') },
 ]
 
 export const router = createRouter({

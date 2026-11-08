@@ -32,20 +32,31 @@
 
         <p class="hint">{{ current.desc }}</p>
 
-        <div class="frame">
-          <iframe
-            :key="reloadKey + active"
-            :src="current.url"
-            :title="`${current.name}预览`"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-          ></iframe>
+        <div v-if="!demoAvailable" class="unavailable">
+          <strong>演练版暂未随本站发布</strong>
+          <p>
+            演练版由源码仓库构建后生成静态产物。当前这次发布没有包含它，
+            因此无法在这里嵌入界面。稍后重新发布即可恢复；需要先看界面的话，
+            可以读使用文档里的截图，或直接从源码仓库本地启动。
+          </p>
         </div>
 
-        <div class="pages">
-          <span class="pages__label">可浏览的页面</span>
-          <span v-for="page in current.pages" :key="page" class="pages__item">{{ page }}</span>
-        </div>
+        <template v-else>
+          <div class="frame">
+            <iframe
+              :key="reloadKey + active"
+              :src="current.url"
+              :title="`${current.name}预览`"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            ></iframe>
+          </div>
+
+          <div class="pages">
+            <span class="pages__label">可浏览的页面</span>
+            <span v-for="page in current.pages" :key="page" class="pages__item">{{ page }}</span>
+          </div>
+        </template>
 
         <div class="notes">
           <h3>数据与限制</h3>
@@ -61,7 +72,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import PageHead from '../components/PageHead.vue'
 import FinalCta from '../sections/FinalCta.vue'
 import { demoApps, demoNotes } from '../data/demo'
@@ -69,11 +80,33 @@ import { demoApps, demoNotes } from '../data/demo'
 const active = ref(demoApps[0].key)
 const reloadKey = ref(0)
 
+// 演练版由 caiwu 仓库构建后拼进 /demo/。构建未就绪时 iframe 会是空白，
+// 这里先探测入口是否可用，不可用时给出明确说明而不是留白。
+const demoAvailable = ref(true)
+
 const current = computed(() => demoApps.find((app) => app.key === active.value) ?? demoApps[0])
 
 function reload() {
   reloadKey.value += 1
 }
+
+onMounted(async () => {
+  // 站点是 History 路由，任何未知路径都会回退到自己的 index.html，
+  // 所以只看状态码或响应都判断不出来；改为识别演练版入口自身的内容特征。
+  try {
+    const res = await fetch(demoApps[0].url, { headers: { accept: 'text/html' } })
+    if (!res.ok) {
+      demoAvailable.value = false
+      return
+    }
+    const html = await res.text()
+    // 演练版入口由 caiwu 的前端产物生成，带自己的 title 与资源目录；
+    // 站点回退页没有 /demo/ 下的资源引用。
+    demoAvailable.value = /\/demo\/admin\/assets\//.test(html)
+  } catch {
+    demoAvailable.value = false
+  }
+})
 </script>
 
 <style scoped>
@@ -145,6 +178,26 @@ function reload() {
   margin-top: var(--s3);
   font-size: 13.5px;
   color: var(--text-2);
+}
+
+.unavailable {
+  margin-top: var(--s3);
+  padding: var(--s5);
+  border: 1px dashed var(--divider);
+  border-radius: 6px;
+  background: var(--white-soft);
+}
+
+.unavailable strong {
+  font-size: 15px;
+}
+
+.unavailable p {
+  margin-top: var(--s2);
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-width: 68ch;
 }
 
 .frame {

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build && node scripts/gen-seo.mjs",
+    "build:app": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "demo:build": "node demo/build-demo.mjs",
     "demo:serve": "node demo/serve.mjs"
