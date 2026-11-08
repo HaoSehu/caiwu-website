@@ -71,30 +71,33 @@
       </div>
     </div>
 
-    <Transition name="menu">
-      <div v-if="menuOpen" id="nav-menu" class="nav__menu">
-        <nav class="wrap nav__menu-inner" aria-label="移动端页面导航">
-          <RouterLink
-            v-for="item in nav"
-            :key="item.id"
-            :to="item.to"
-            :class="{ 'is-active': route.path === item.to }"
-            @click="closeMenu"
-          >
-            {{ item.label }}
-          </RouterLink>
-          <a :href="qqGroupUrl" target="_blank" rel="noreferrer noopener" @click="closeMenu">
-            开发者 QQ 群<span class="nav__ext" aria-hidden="true">↗</span>
-          </a>
-          <a :href="brand.apiDocs" target="_blank" rel="noreferrer noopener" @click="closeMenu">
-            接口文档<span class="nav__ext" aria-hidden="true">↗</span>
-          </a>
-          <a :href="brand.repo" target="_blank" rel="noreferrer noopener" @click="closeMenu">
-            GitHub 仓库<span class="nav__ext" aria-hidden="true">↗</span>
-          </a>
-        </nav>
-      </div>
-    </Transition>
+    <div
+      v-show="menuOpen"
+      id="nav-menu"
+      class="nav__menu"
+      :class="{ 'is-open': menuOpen }"
+    >
+      <nav class="wrap nav__menu-inner" aria-label="移动端页面导航">
+        <RouterLink
+          v-for="item in nav"
+          :key="item.id"
+          :to="item.to"
+          :class="{ 'is-active': route.path === item.to }"
+          @click="closeMenu"
+        >
+          {{ item.label }}
+        </RouterLink>
+        <a :href="qqGroupUrl" target="_blank" rel="noreferrer noopener" @click="closeMenu">
+          开发者 QQ 群<span class="nav__ext" aria-hidden="true">↗</span>
+        </a>
+        <a :href="brand.apiDocs" target="_blank" rel="noreferrer noopener" @click="closeMenu">
+          接口文档<span class="nav__ext" aria-hidden="true">↗</span>
+        </a>
+        <a :href="brand.repo" target="_blank" rel="noreferrer noopener" @click="closeMenu">
+          GitHub 仓库<span class="nav__ext" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -366,6 +369,22 @@ onBeforeUnmount(() => {
   background: var(--white);
   border-bottom: 1px solid var(--divider);
   box-shadow: 0 18px 40px rgba(33, 53, 71, 0.12);
+  /* 纯 CSS 过渡：面板始终在 DOM 中，由 .is-open 控制显隐，
+     避免入场动画未完成时元素已可交互、把触摸事件吃掉 */
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.2s var(--ease), transform 0.24s var(--ease),
+    visibility 0s linear 0.24s;
+}
+
+.nav__menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .nav__menu-inner {
@@ -399,17 +418,6 @@ onBeforeUnmount(() => {
 .nav__ext {
   font-size: 13px;
   color: var(--text-3);
-}
-
-.menu-enter-active,
-.menu-leave-active {
-  transition: opacity 0.2s var(--ease), transform 0.24s var(--ease);
-}
-
-.menu-enter-from,
-.menu-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
 }
 
 @media (max-width: 960px) {

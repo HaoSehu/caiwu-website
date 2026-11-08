@@ -83,6 +83,7 @@ export interface DemoAdapterOptions {
 export function createDemoAdapter(options): AxiosAdapter
 ```
 
+- 数据集在 demo 启动时从**同源静态路径** `/demo/data/<app>.json` fetch 一次（文件提交在官网仓库、随站点发布，见 4.8）；不打包进 JS chunk。「不连接任何后端」仍然成立——它是与页面同站发布的一份静态资源。本地单独预览三端 dist 时，把 `demo/data/` 拷到预览服务器根目录即可。
 - 实现为 axios adapter：拿到 `config.url` + `config.method` + `params`，去除查询串与 `_t` 时间戳后按 `METHOD path` 匹配。
 - 匹配到 → 返回 `{ code: 0, message: 'ok', data }`。
 - 未匹配的 GET → 返回 `{ code: 0, message: 'ok', data: 该接口的空形状 }`；空形状也要从「接口→空形状」表拿，缺表时返回 `{}`（会让部分页面空渲染，但不报错）。
@@ -106,6 +107,7 @@ export function createDemoAdapter(options): AxiosAdapter
 2. 在副本库上执行脱敏 SQL（字段级替换/清空，见 4.4）。
 3. 后端加一个 artisan 命令（例如 `php artisan demo:export`），用副本库启动 Laravel，遍历 `backend/routes/api.php` + 各端 API 模块里出现的路径，按真实 controller 调一次，把响应写成 `demo-data/{admin,console,www}.json`。**形状天然和后端一致。**
 4. 日志类大表（`activity_logs`、`schedule_task_runs`、`integration_plugin_runtime_logs`）不导出原始数据，列表接口给前 2 页即可。
+5. 导出时把所有时间字段按「相对导出时刻」整体平移（例如把最近一笔订单固定为导出前 2 天），保证演示里服务不过期、图表不空窗；导出时刻写进 `demo-data/meta.json`。
 
 **注意：这一步会碰 `E:\caiwu` 后端代码（新增命令与脱敏脚本），属于后续实现阶段，不在本设计文档的「不改文件」范围内。**
 
@@ -124,6 +126,9 @@ export function createDemoAdapter(options): AxiosAdapter
 | `payment_callbacks.payload_json` | 清空 |
 | `media_files` 中 `ftp` 行的绝对 URL（`154.219.97.172`） | 改为本地 demo 媒体相对路径 |
 | `content_articles.content`（可能含真实联系方式/链接） | 保留正文，但把外链与联系方式替换为 `example.test` 域名 |
+| `tickets.subject` / `ticket_replies.content` / orders/invoices/services 等表的 `remark` 自由文本 | **整体替换为模板生成的虚构工单与备注**（列级替换抓不住自由文本里的姓名、电话、邮箱） |
+| `activity_logs.context` / `notifications` / `message_*` 载荷 | 清空或替换为通用条目 |
+| 管理端统计与金额：dashboard stats/monthly-revenue、orders/invoices/payments 的金额、users/services 的规模数 | **按固定比例缩放成虚构数字**（与站点「数据均为虚构」的文案一致），不导出真实营收 |
 
 脱敏后的副本库可以留一份本地快照（不进 git），供后续重复导出。
 
@@ -174,8 +179,11 @@ export function createDemoAdapter(options): AxiosAdapter
 
 每端 `package.json` 加 `"build:demo": "vite build --mode demo && <预算检查>"`。
 
+**数据集提交在官网仓库**（决定见第十节）：`D:\caiwu-website\demo\data\{admin,console,www}.json` + `meta.json`，作为源文件提交、随构建进 `dist/demo/data/`。三端产物本身仍不进 git，由 CI 现场构建。数据集刷新是一次独立的官网仓库提交（重新跑导出 → 覆盖 `demo/data/` → push），不触发三端重编。
+
 然后拼装：
 ```
+dist/demo/data/ ← 官网仓库 demo/data/（源文件，直接拷贝）
 dist/demo/admin/ ← frontend-admin-v3/dist-demo/
 dist/demo/console/ ← frontend-user-v4-console/dist-demo/
 dist/demo/www/ ← frontend-user-v3-www/dist-demo/
@@ -183,11 +191,21 @@ dist/demo/media/ ← backend/public/media/（拷贝）
 dist/demo/index.html ← 官网仓库 demo/ 入口页构建产物
 ```
 
-**问题：GitHub Actions 现在只 checkout 官网仓库。** 三端在另一个仓库 `HaoSehu/caiwu`。有两个办法：
-- A：CI 里额外 `actions/checkout` 一份 `HaoSehu/caiwu` 到 `caiwu/` 子目录（需要跨仓库 token，或对方是公开仓库可直接 clone）。
-- B：把三端 demo 构建产物作为 release artifact / 预构建目录提交到官网仓库（例如 `demo/prebuilt/`），官网 CI 只做拼装。
+**问题：GitHub Actions 现在只 checkout 官网仓库。** 三端在另一个仓库 `HaoSehu/caiwu`（公开仓库）。有两个办法：
+- A：CI 里额外 `actions/checkout` 一份 `HaoSehu/caiwu` 到 `caiwu/` 子目录，**并固定到一个 tag/commit**，避免 `caiwu` main 的进行中改动破坏官网发布；同时在 `caiwu` 仓库加 `repository_dispatch`（或定时任务）触发官网重建，否则 demo 会静默过期。
+- B：只把导出后的数据集提交到官网仓库 `demo/data/`，三端产物仍由 CI 现场构建（本设计采用，见第十节）。
 
-推荐 A（产物不进 git）；如果 `HaoSehu/caiwu` 是私有仓库，则用 B。
+推荐 A + 固定 ref + `repository_dispatch`；数据集提交在官网仓库（本设计采用，见第十节），三端产物不进 git。
+
+### 4.8.1 demo 内的跨站链接
+
+三端互相跳转的链接（www 的登录/控制台入口、console 回官网、www 结算跳 console）默认都走 `window.location.assign` 到生产域名。demo 模式必须全部改成**站内相对路径**：
+- `VITE_CONSOLE_SITE_URL=/demo/console/`、`VITE_PUBLIC_SITE_URL=/demo/www/`，写入各端 `.env.demo`；
+- www 的 `buildConsoleUrl`（`src/utils/consoleUrl.js`）在 demo 下拼出 `/demo/console/#/client/...` 前缀；
+- console 的 `public-redirect` 在 demo 下指向 `/demo/www/`；
+- 结算跳转 `/client/checkout-resume` 在 hash 路由下是 `/demo/console/#/client/checkout-resume?...`，需要确认 query 能随 hash 路由正常传递。
+
+这些改动落在 `.env.demo` 与上述两个工具函数中，**不新增文件，但需要两处小改**，已补进第七节清单。
 
 ### 4.9 官网侧文案与入口
 
@@ -224,6 +242,7 @@ dist/demo/index.html ← 官网仓库 demo/ 入口页构建产物
 - `src/data/demo.ts`（URL 改为 /demo/...）
 - `src/pages/DemoPage.vue`（如需调整 iframe 说明）
 - `demo/index.html` + `demo/` 入口页源文件（新增）
+- `demo/data/{admin,console,www}.json` + `meta.json`（新增，脱敏数据集，提交在官网仓库）
 - `package.json`（新增 `demo:build` 等脚本）
 - `.github/workflows/deploy-pages.yml`（新增 demo 构建与拼装步骤）
 - `public/_headers`（如需给 `/demo/*` 调 CSP）
@@ -233,11 +252,13 @@ dist/demo/index.html ← 官网仓库 demo/ 入口页构建产物
 - `shared/runtime/http/demoAdapter.ts`（新增）
 - `shared/runtime/index.ts`（导出 demoAdapter）
 - `frontend-admin-v3/src/utils/request/index.ts`、`frontend-user-v4-console/src/utils/request.ts`、`frontend-user-v3-www/src/app/http/request.ts`（demo 注入）
+- `frontend-user-v3-www/src/utils/consoleUrl.js`、`frontend-user-v4-console/src/router/modules/public-redirect.ts`（demo 下跨站链接改站内相对路径）
 - `frontend-admin-v3/src/router/index.ts`、`frontend-user-v4-console/src/router/index.ts`、`frontend-user-v3-www/src/app/router/index.ts`（demo hash 路由）
 - 各端 `.env.demo`（新增 3 个）
 - 各端 `package.json`（`build:demo` 脚本）
 - `backend/scripts/export_demo_data.php`（新增，从副本库导出 JSON）
 - `backend/scripts/demo_anonymize.sql` 或 `.php`（脱敏脚本，新增）
+- `demo-data/{admin,console,www}.json` + `meta.json`（导出产物，本地生成后拷入官网仓库 `demo/data/` 提交，caiwu 仓库不跟踪）
 
 **不动的**：三端所有 `src/pages`、`src/domains`、`src/api` 业务代码；backend 路由与 controller。
 
@@ -258,3 +279,10 @@ dist/demo/index.html ← 官网仓库 demo/ 入口页构建产物
 - **从副本库经序列化器导出而非手写 JSON**：因为 178/106/19 个接口形状各异，手写必错。
 - **不引入 MSW**：多一个依赖和 service worker 层，且与 axios adapter 能力重复。
 - **入口页单独做 `/demo/index.html`**：让「实时预览」页文案稳定，不把入口页与官网主站耦合。
+- **自由文本一律替换为虚构内容**（工单、备注、通知载荷），不保留原文字；宁可列表显得假，也不发布真实客服对话。
+- **商业数字按比例缩放**（营收、订单/账单金额、用户与订单规模），与「数据均为虚构」的承诺一致。
+- **时间戳按导出时刻平移**，保证 demo 不会随时间过期。
+
+## 十、已定的决策
+
+1. **脱敏数据集提交在官网仓库 `caiwu-website`**，路径 `demo/data/{admin,console,www}.json` + `meta.json`，与站点同生命周期、同一次发布。数据刷新是官网仓库的一次独立提交：重跑导出 → 覆盖 `demo/data/` → push → CI 自动重建。代价是公开 git 历史里会长期保留这些快照，因此脱敏脚本必须按第四节全量执行（自由文本虚构化、商业数字缩放、密钥清空），导出后人工抽查再提交。
