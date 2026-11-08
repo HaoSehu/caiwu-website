@@ -41,20 +41,68 @@ export const docIndex = [
     desc: '七个能力域的目录映射、入口类与 config.php 写法、加载器预检与硬性约束。',
   },
   {
-    to: '/devguide/database',
+    to: '/devguide/payment',
     kicker: '06',
+    title: '支付接口',
+    desc: 'PaymentGatewayInterface 的八个方法、预下单/查单/回调三条链路与插件实现要点。',
+  },
+  {
+    to: '/devguide/mail',
+    kicker: '07',
+    title: '邮件接口',
+    desc: 'MailDriver 契约、SMTP 与多 SMTP 轮询插件、模板与加密配置。',
+  },
+  {
+    to: '/devguide/sms',
+    kicker: '08',
+    title: '短信接口',
+    desc: 'SmsDriver 契约、验证码模板契约、阿里云与 Stay33 插件与发送限流。',
+  },
+  {
+    to: '/devguide/captcha',
+    kicker: '09',
+    title: '验证码接口',
+    desc: '极验与 Vaptcha 插件、登录风控中的触发条件与 captcha_required 载荷。',
+  },
+  {
+    to: '/devguide/hook',
+    kicker: '10',
+    title: 'Hook 开发',
+    desc: 'ScheduleHook 契约、定时任务的钩子点、上下文载荷与返回值约定。',
+  },
+  {
+    to: '/devguide/storage',
+    kicker: '11',
+    title: '远端存储',
+    desc: 'media.storage 能力、六个 storage.* 动作、本地与远程驱动的迁移与改写。',
+  },
+  {
+    to: '/devguide/module',
+    kicker: '12',
+    title: '模块开发',
+    desc: '以 Service 为域的模块边界、目录约定、跨模块调用规则与新增模块的落点。',
+  },
+  {
+    to: '/devguide/standards',
+    kicker: '13',
+    title: '开发规范',
+    desc: '目录与命名、注释、错误与日志、审查闭环、测试标准与提交格式的总规范。',
+  },
+  {
+    to: '/devguide/database',
+    kicker: '14',
     title: '数据库与迁移',
     desc: '三张核心表的职责边界、迁移规则、db:upgrade 升级入口与版本账本。',
   },
   {
     to: '/devguide/deploy',
-    kicker: '07',
+    kicker: '15',
     title: '部署与运维',
     desc: '单机宝塔拓扑、计划任务、队列分组、Redis 分层、监控端点与回滚。',
   },
   {
     to: '/devguide/verify',
-    kicker: '08',
+    kicker: '16',
     title: '测试与验证',
     desc: '各端验证命令、根 workspace 脚本、体积门禁、测试分层与提交前检查。',
   },
@@ -481,6 +529,323 @@ export const opsRollback = [
   '数据库：禁止在生产直接 migrate:rollback 不可逆迁移，走备份还原。',
   '前端：按站点独立回滚，直接恢复旧 dist。',
   '支付、开通、返佣相关回退前先冻结 schedule:run，避免边回滚边产生新的异步动作。',
+]
+
+/* ---------------- 支付接口 ---------------- */
+
+export const payGatewayMethods = [
+  { method: 'key()', desc: '驱动的稳定标识，与插件 slug 一致' },
+  { method: 'name()', desc: '展示名，出现在结账页的支付方式列表' },
+  { method: 'isEnabled()', desc: '该渠道是否启用；关掉后不出现在可选列表' },
+  { method: 'matchesMerchantId()', desc: '判断回调是否属于本渠道的商户，避免串单' },
+  { method: 'supportsAction()', desc: '声明支持 precreate / query / notify_verify 中的哪些动作' },
+  { method: 'precreate(PaymentPrecreateRequest)', desc: '预下单，返回二维码或跳转地址' },
+  { method: 'query(string $outTradeNo)', desc: '按商户订单号查单，用于轮询与补偿' },
+  { method: 'verifyNotify(array $payload)', desc: '回调验签，路由层中间件与 Service 层各验一次' },
+  { method: 'buildNotifyResponse(bool)', desc: '按渠道要求构造回调应答体' },
+]
+
+export const payDataObjects = [
+  { name: 'PaymentPrecreateRequest', fields: 'outTradeNo · amount · subject · timeoutExpress · context' },
+  { name: 'PaymentPrecreateResult', fields: 'qrCode · outTradeNo · raw' },
+  { name: 'PaymentQueryResult', fields: 'tradeStatus · tradeNo · outTradeNo · totalAmount · raw' },
+]
+
+export const payFlow = [
+  {
+    step: '预下单',
+    detail: '结账页选定渠道后经 PaymentGatewayManager 取到网关并调 precreate()，返回二维码，前端轮询订单状态。',
+  },
+  {
+    step: '回调入账',
+    detail: 'POST /api/v2/client/payment/notify/{gateway} 先过 verify.payment.callback 验签与 60 次/分限流，Service 层再二次验签、校验金额与状态，以商户订单号幂等写入 payments。',
+  },
+  {
+    step: '查单补偿',
+    detail: '轮询与补偿走 query()；支付宝另有专用回调路由 /payment/alipay/notify，使用 verify.alipay.callback。',
+  },
+]
+
+export const payRules = [
+  '支付插件只做协议适配：下单、查单、验签、应答。退款不在插件层，当前唯一退款出口是退到余额（refund_method=balance）。',
+  'payments 只记录第三方真实入账；余额支付、管理员手动开服与免费订单不产生 Payment。',
+  'Payment 记录禁止物理删除；冲正写反向事件，不修改历史行。',
+  '回调是未认证入口：先限流再验签，验签失败不落 runtime log，避免被刷日志。',
+  '金额字段用字符串或整数分表达，不允许隐式 float 参与计算。',
+  '敏感配置（私钥、商户密钥）标 secret: true 加密存储，前端只显示是否已配置。',
+]
+
+export const payPluginExample = `final class AliPayPlugin
+{
+    public function execute(array $request): array
+    {
+        $action = (string) ($request['action'] ?? '');
+
+        return match ($action) {
+            'payment.precreate'     => $this->precreate($request),
+            'payment.query'         => $this->query($request),
+            'payment.verify_notify' => $this->verifyNotify($request),
+            default => throw new BusinessException('不支持的支付动作: '.$action, 42200),
+        };
+    }
+}`
+
+/* ---------------- 邮件接口 ---------------- */
+
+export const mailDriverContract = [
+  { method: 'key()', desc: '驱动标识，写入 settings 的 mail_driver' },
+  { method: 'label()', desc: '管理端展示名' },
+  { method: 'sendHtml(string $to, string $subject, string $html, array $context = [])', desc: '发送 HTML 邮件；纯文本由 HTML 推导' },
+]
+
+export const mailPlugins = [
+  { slug: 'smtp', name: 'SMTP', caps: 'smtp · html', note: '单账号 SMTP，配置主机、端口、加密方式与账号密码。' },
+  { slug: 'multi_smtp_round_robin', name: '多 SMTP 轮询', caps: 'smtp · round_robin · cooldown', note: '多账号轮询发送，失败自动切换并让该账号进入冷却；可对邮箱验证码按 IP 限流（默认 6 次/分）。' },
+  { slug: 'demo_mail', name: 'Demo', caps: '演示', note: '开发联调用，不实际投递。' },
+]
+
+export const mailNotes = [
+  'MailDriverManager 负责注册与解析：resolve($key) 返回实现 MailDriver 的驱动，未指定时取 settings 中的 mail_driver。',
+  '插件清单通过 extra.driver_binding 声明 binding_key=mail_driver 与 provider_key，启用后自动成为可选驱动。',
+  '邮件正文由消息场景模板渲染，业务代码只传场景与变量，不手工拼 HTML。',
+  'SMTP 账号密码等字段标 secret: true，保存后加密，界面只显示是否已配置与脱敏预览。',
+  '发送失败要进入重试或失败队列，不允许静默吞掉异常。',
+]
+
+/* ---------------- 短信接口 ---------------- */
+
+export const smsDriverContract = [
+  { method: 'key()', desc: '驱动标识，写入 settings 的 sms_driver' },
+  { method: 'label()', desc: '管理端展示名' },
+  { method: 'sendMessage(SmsMessageRequest)', desc: '按模板编码发送通知短信：phone · templateCode · content' },
+  { method: 'sendVerifyCode(SmsSendRequest)', desc: '发送验证码短信：phone · code · options' },
+]
+
+export const smsTemplateContract = {
+  name: 'ProvidesVerifyCodeTemplate',
+  desc: '可选接口。驱动实现它即可按用途（purpose）返回验证码文案模板，避免系统层硬编码某家服务商的模板语法。',
+  method: 'verifyCodeTemplate(string $purpose): string',
+}
+
+export const smsPlugins = [
+  { slug: 'aliyun', name: '阿里云短信', caps: 'verify_code', note: '签名与模板在阿里云控制台申请，插件侧只填 AccessKey 与模板号。' },
+  { slug: 'stay33', name: 'Stay33', caps: 'verify_code', note: '第三方短信网关，接口字段与阿里云不同，由插件内部适配。' },
+  { slug: 'demo_sms', name: 'Demo', caps: '演示', note: '开发联调用，验证码写入日志。' },
+]
+
+export const smsNotes = [
+  '验证码发送走 VerificationCodeService：生成、存储、限流、投递分开，驱动只负责投递。',
+  '验证码有限期与重发间隔，同一手机号的发送频率受 MessageRateLimitService 约束。',
+  '短信模板变量随 SmsSendRequest.options 传给驱动，模板语法差异留在插件内。',
+  'App 以固定请求头 X-Client-Platform: android 声明身份，验证码接口对 App 免除人机验证；网页端行为不变。',
+  'AccessKey、密钥等字段标 secret: true，加密存储且不在 API 响应中出现原值。',
+]
+
+/* ---------------- 验证码接口 ---------------- */
+
+export const captchaPlugins = [
+  { slug: 'geetest', name: 'GeeTest 行为验证', caps: 'config · verify · script', note: '配置 Captcha ID 与 Captcha Key；前端加载脚本后回传结果，后端 verify() 校验。' },
+  { slug: 'vaptcha', name: 'Vaptcha', caps: 'config · verify', note: '另一家行为验证服务，接入方式同 GeeTest。' },
+]
+
+export const captchaFlow = [
+  {
+    step: '触发条件',
+    detail: 'LoginRiskControlService 判断：启用验证码时按账号与 IP 的失败次数触发；未启用时以软锁定兜底。',
+  },
+  {
+    step: '校验',
+    detail: 'ClientLoginFlowService::assertCaptchaVerified() 调 GeeTestService::verify($input, $ip)，不通过抛业务异常。',
+  },
+  {
+    step: '前端联动',
+    detail: '需要弹码时，异常载荷带 captcha_required: true，前端据此拉起验证组件，用户完成后再提交一次。',
+  },
+]
+
+export const captchaNotes = [
+  '验证码插件通过 extra.driver_binding 声明 binding_key=captcha_driver，启用后成为当前驱动。',
+  '账号维度的锁定要求失败来自至少三个不同 IP，避免单个 IP 用他人账号名制造账号级拒绝服务。',
+  '登录另有独立限流：管理端登录 5 次/分、MFA 校验 10 次/分。',
+  'App 端不内嵌网页验证，改为免人机验证的验证码登录；网页端逻辑不变。',
+  'Captcha Key 等字段标 secret: true，加密存储。',
+]
+
+/* ---------------- Hook 开发 ---------------- */
+
+export const hookContract = {
+  name: 'ScheduleHook',
+  sig: 'handle(string $hook, array $context = []): mixed',
+  desc: '插件实现该接口后，在清单里按钩子名注册；调度器在对应时点调用，返回值写入运行日志。',
+}
+
+export const hookPoints = [
+  { name: 'before_cron', when: '每分钟调度开始前' },
+  { name: 'after_cron', when: '每分钟调度结束后' },
+  { name: 'before_daily_cron', when: '每日调度开始前' },
+  { name: 'after_daily_cron', when: '每日调度结束后' },
+  { name: 'after_five_minute_cron', when: '每五分钟调度结束后' },
+  { name: 'after_half_hour_minute_cron', when: '每半小时调度结束后' },
+  { name: 'task.before', when: '单个心跳任务执行前' },
+  { name: 'task.after', when: '单个心跳任务执行成功后' },
+  { name: 'task.failed', when: '单个心跳任务失败后' },
+  { name: 'tick.every_minute', when: '每分钟' },
+  { name: 'tick.every_five_minutes', when: '每五分钟' },
+  { name: 'tick.hourly', when: '每小时' },
+  { name: 'tick.daily', when: '每日' },
+]
+
+export const hookManifestExample = `'info' => [
+    'domain' => 'addons',
+    'slug' => 'demo_style',
+    'capabilities' => ['addon.scheduled_task'],
+    'extra' => [
+        'schedule_hooks' => [
+            'addons.demo_style.refresh' => [DemoStyleHook::class],
+        ],
+        'scheduled_tasks' => [
+            DemoStyleScheduledTask::class,
+        ],
+    ],
+],`
+
+export const hookContextExample = `final class DemoStyleHook implements ScheduleHook
+{
+    public function handle(string $hook, array $context = []): array
+    {
+        return [
+            'handled' => true,
+            'hook' => $hook,
+            'addon' => 'demo_style',
+            'source' => (string) ($context['source'] ?? 'unknown'),
+            'task_key' => $context['task_key'] ?? null,
+        ];
+    }
+}`
+
+export const hookNotes = [
+  '上下文载荷至少包含 source（触发来源）与 task_key（任务标识），插件据此区分调用场景。',
+  '返回值会被序列化写入调度运行日志，便于在管理端排查；不要返回大对象或二进制。',
+  '单个插件的清单损坏或执行异常被隔离并记日志，不会拖垮整张心跳任务注册表。',
+  '钩子只做扩展点，不注册系统级路由、调度或全局中间件。',
+  '新增插件式定时任务时，同时实现 ScheduledTask 并在清单 scheduled_tasks 中登记。',
+]
+
+/* ---------------- 远端存储 ---------------- */
+
+export const storageActions = [
+  { action: 'storage.test', desc: '连通性与凭据校验' },
+  { action: 'storage.put', desc: '按对象键上传，返回对象键与外链' },
+  { action: 'storage.get', desc: '下载到本地目标目录，供迁移与预览使用' },
+  { action: 'storage.delete', desc: '删除对象' },
+  { action: 'storage.exists', desc: '判断对象是否存在' },
+  { action: 'storage.url', desc: '生成外链；public_domain 非空时优先使用' },
+]
+
+export const storagePlugins = [
+  { slug: 'aliyun_oss', name: '阿里云 OSS', note: 'RAM AccessKey；endpoint 填地域节点域名，不含协议与 bucket 前缀。' },
+  { slug: 'tencent_cos', name: '腾讯云 COS', note: 'SecretId / SecretKey 与存储桶区域。' },
+  { slug: 'qiniu', name: '七牛', note: 'AccessKey / SecretKey 与绑定域名。' },
+  { slug: 'ftp', name: 'FTP', note: 'FTP 主机、端口与账号密码。' },
+]
+
+export const storageNotes = [
+  '驱动候选 = local + 已启用且声明 media.storage 能力的 addons 插件；插件不可用（目录缺失、清单损坏、必填项缺失）时自动回落本地。',
+  'MediaStorageResolver 解析当前驱动，RemoteMediaStorage 负责执行六个 storage.* 动作，业务代码不直接调插件。',
+  '本地与远程之间迁移用 MediaMigrationService；存量外链订正用 media:storage-rewrite-urls（默认 dry-run，确认后 --execute）。',
+  '远程媒体文件缺少对象键时阻止删除，需先运行 media:storage-audit 核对数据。',
+  '对象默认私有读；需要直连外链时在桶侧开公有读，或上传时选公有读。',
+  '密钥字段标 secret: true 加密存储。',
+]
+
+/* ---------------- 模块开发 ---------------- */
+
+export const moduleDomains = [
+  { name: 'Finance', dir: 'app/Services/Finance/', note: '充值、余额扣减、网关支付、混合支付、退款与结算编排' },
+  { name: 'Order', dir: 'app/Services/Order/', note: '下单、订单查询、支付成功后的业务流派发' },
+  { name: 'ProductCatalog', dir: 'app/Services/ProductCatalog/', note: '商品分类、配置与定价、库存与上游同步' },
+  { name: 'Provisioning', dir: 'app/Services/Provisioning/', note: '开通、续费、状态同步与租约' },
+  { name: 'Upstream', dir: 'app/Services/Upstream/', note: '上游驱动契约与控制台能力' },
+  { name: 'Integrations', dir: 'app/Services/Integrations/', note: '插件扫描、安装、配置、运行时注册与 adapter' },
+  { name: 'ClientServiceConsole', dir: 'app/Services/ClientServiceConsole/', note: '控制台动作门禁与操作日志' },
+  { name: 'Notification / Messaging / Sms / Mail', dir: 'app/Services/', note: '站内信、消息场景、短信与邮件投递' },
+  { name: 'Ticket / Content / Referral / Verification / User', dir: 'app/Services/', note: '工单、内容、分销、实名与用户体系' },
+  { name: 'Automation / System', dir: 'app/Services/', note: '心跳调度、定时 Hook、日志与升级' },
+]
+
+export const moduleRules = [
+  '模块即服务域：一个目录一族职责，目录内的 Service 只关心本域对象与规则。',
+  '跨域取数走对方 Service 的公开方法，不直接查对方的表，也不把对方 Model 的查询拼进自己的 SQL。',
+  '资金流按流拆分：充值、消费-余额、消费-在线、消费-混合、冲正退款各自独立 Service，不合并成一个万能入口。',
+  '资金写入点不增加：余额唯一经 AccountService，台账唯一经 FinanceLedgerService，单据唯一经 FinanceDocumentService。',
+  '新增模块时在 app/Services/ 下建目录，控制器只调用模块入口，不绕过模块直接拼装。',
+  '模块内的 Model 只放关系、scope、cast 与轻量状态判断；跨表流程留在 Service。',
+]
+
+export const moduleSkeleton = `app/Services/{Domain}/
+├── {Domain}Service.php        # 对外入口，编排本域用例
+├── Concerns/                  # 本域复用的 trait
+├── Core/                      # 唯一写口与核心算法（如 Finance/Core）
+└── Data/                      # 请求/结果 DTO
+
+app/Http/Controllers/Admin/V2/  # 只薄层调用 Service
+app/Http/Requests/Admin/V2/     # 校验与归一化
+app/Http/Resources/Admin/V2/    # 输出投影`
+
+/* ---------------- 开发规范 ---------------- */
+
+export const standardSections = [
+  {
+    title: '类型声明',
+    points: [
+      '新增 PHP 源文件必须写 declare(strict_types=1)，app/ 与 plugins/ 一律适用。',
+      '历史文件的补齐是基线收敛而非一次性开关：补严格类型会改变隐式转换行为，必须随模块回归。',
+      '待补齐文件登记在 backend/strict-types-baseline.json，由 composer check:strict-types 校验，清单只减不增。',
+    ],
+  },
+  {
+    title: '注释',
+    points: [
+      '必须写：第三方协议差异、非显然的字段映射、资金与状态流转约束、幂等键与锁的原因、历史兼容逻辑的条件与移除前提。',
+      '不写：「给变量赋值」这类代码已表达清楚的内容，以及与代码不同步的长段背景。',
+      'public 接口与 DTO 用 DocBlock 说明输入输出语义；复杂分支前用 1 到 3 行说明为什么这样做。',
+    ],
+  },
+  {
+    title: '错误与日志',
+    points: [
+      '用户可见的错误 message 与 data.errors 一律简体中文；第三方原始错误必须映射为内部提示。',
+      '日志不脱敏：secret、token、密码、私钥、完整证件号照常记录，便于排查；脱敏只发生在 API 响应层。',
+      '关键日志可串联 trace_id、actor、resource、provider、operation；财务与审计写入记录操作者、来源、IP。',
+      '敏感配置输出走白名单 Resource；更新时空值表示保留旧值，不能用掩码或空串覆盖真实配置。',
+    ],
+  },
+  {
+    title: '审查闭环',
+    points: [
+      '审查必须输出范围矩阵：目录、模块、接口、风险域、是否覆盖。',
+      '每个 Blocker / High 必须有文件路径、方法名或路由证据。',
+      '每个维度标注「已检查 / 未覆盖 / 需进一步验证」，未覆盖项说明原因与补查建议。',
+      '报告末尾附完整性自检表，发现无问题的维度也要写结论与依据。',
+    ],
+  },
+  {
+    title: '测试',
+    points: [
+      '优先覆盖：支付创建/回调/重复回调、余额并发扣减、实名成功与失败、上游开通与同步失败、权限缺失与越权。',
+      '敏感配置读取与编辑不得泄露原值；供应商响应不含 api_key。',
+      '维护命令不得删除 payments；财务反转保留反向流水。',
+      'Job 失败不吞异常，必须进入重试、failed_jobs 或明确补偿状态。',
+    ],
+  },
+  {
+    title: '提交',
+    points: [
+      '改完先给出改动与验证摘要，确认后提交；提交信息为 Fix: / Feat: / Refactor: 加中文描述。',
+      '接口的增删改同步到 Apifox 项目，代码与文档两侧都完成才算完成。',
+      '不手工编辑 docs/自动生成/；路由或结构调整后运行生成脚本。',
+    ],
+  },
 ]
 
 /* ---------------- 测试与验证 ---------------- */

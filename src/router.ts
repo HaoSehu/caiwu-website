@@ -54,6 +54,46 @@ const routes = [
     component: () => import('./pages/docs/PluginPage.vue'),
   },
   {
+    path: '/devguide/payment',
+    name: 'devguide-payment',
+    component: () => import('./pages/docs/PaymentPage.vue'),
+  },
+  {
+    path: '/devguide/mail',
+    name: 'devguide-mail',
+    component: () => import('./pages/docs/MailPage.vue'),
+  },
+  {
+    path: '/devguide/sms',
+    name: 'devguide-sms',
+    component: () => import('./pages/docs/SmsPage.vue'),
+  },
+  {
+    path: '/devguide/captcha',
+    name: 'devguide-captcha',
+    component: () => import('./pages/docs/CaptchaPage.vue'),
+  },
+  {
+    path: '/devguide/hook',
+    name: 'devguide-hook',
+    component: () => import('./pages/docs/HookPage.vue'),
+  },
+  {
+    path: '/devguide/storage',
+    name: 'devguide-storage',
+    component: () => import('./pages/docs/StoragePage.vue'),
+  },
+  {
+    path: '/devguide/module',
+    name: 'devguide-module',
+    component: () => import('./pages/docs/ModulePage.vue'),
+  },
+  {
+    path: '/devguide/standards',
+    name: 'devguide-standards',
+    component: () => import('./pages/docs/StandardsPage.vue'),
+  },
+  {
     path: '/devguide/database',
     name: 'devguide-database',
     component: () => import('./pages/docs/DatabasePage.vue'),
