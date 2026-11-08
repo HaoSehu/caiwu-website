@@ -86,6 +86,16 @@
             <li v-for="d in dnsAndNetwork" :key="d">{{ d }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>站点的默认外观</h2>
+          <p class="lead">还没有填配置时，后台侧边栏与顶部已经可用；下面所有配置项都在这个界面里完成。</p>
+          <DocShot
+            src="admin-dashboard.webp"
+            alt="管理端默认界面"
+            caption="管理端 · 首次登录后的侧边栏与数据看板"
+          />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -95,6 +105,7 @@
 import PageHead from '../../components/PageHead.vue'
 import SectionShell from '../../components/SectionShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import {
   disabledFunctions,
   disabledKeep,

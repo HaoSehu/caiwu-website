@@ -29,6 +29,15 @@
             <li><strong><RouterLink to="/devguide" class="link">开发者文档</RouterLink></strong>：代码与接口，偏研发。</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>后台全貌</h2>
+          <DocShot
+            src="admin-dashboard.webp"
+            alt="管理端数据看板"
+            caption="登录后的第一屏：数据看板与待办中心，左侧是九个功能分区"
+          />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -39,6 +48,7 @@ import { RouterLink } from 'vue-router'
 import PageHead from '../components/PageHead.vue'
 import SectionShell from '../components/SectionShell.vue'
 import DocPage from '../components/DocPage.vue'
+import DocShot from '../components/DocShot.vue'
 import { beginnerIndex } from '../data/beginner'
 </script>
 

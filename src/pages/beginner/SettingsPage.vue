@@ -95,6 +95,16 @@
             </table>
           </div>
         </section>
+
+        <section class="blk">
+          <h2>设置界面</h2>
+          <DocShot src="admin-site-info.webp" alt="站点设置" caption="站点内容 · 站点设置：站点名称、Logo、备案号与联系方式" />
+          <DocShot src="admin-site-hero.webp" alt="首页 Banner" caption="站点内容 · 首页 Banner：轮播图文与跳转链接" />
+          <DocShot src="admin-account-policy.webp" alt="账户策略" caption="系统维护 · 账户策略：强制实名、手机号、邮箱三项开关" />
+          <DocShot src="admin-staff.webp" alt="员工管理" caption="权限管理 · 员工管理" />
+          <DocShot src="admin-roles.webp" alt="角色权限" caption="权限管理 · 角色权限：按权限码勾选，资金写入类单独授权" />
+          <DocShot src="admin-notifications.webp" alt="消息配置" caption="通知模板 · 消息配置：站内信、邮件与短信的模板与变量" />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -104,6 +114,7 @@
 import PageHead from '../../components/PageHead.vue'
 import SectionShell from '../../components/SectionShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import {
   adminSettings,
   beginnerIndex,

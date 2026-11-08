@@ -31,6 +31,14 @@
             <li v-for="n in logNotes" :key="n">{{ n }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>日志界面</h2>
+          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="网关日志：支付与上游调用的商户单号、交易号、Trace ID 与结果" />
+          <DocShot src="admin-logs-sms.webp" alt="短信日志" caption="短信日志：模板编号、发送状态、驱动与错误信息" />
+          <DocShot src="admin-logs-tasks.webp" alt="自动任务" caption="自动任务：任务名、状态、耗时与摘要" />
+          <DocShot src="admin-schedules.webp" alt="定时任务" caption="定时任务：刷新周期、最后执行与下次执行" />
+        </section>
       </DocPage>
     </UserShell>
   </div>
@@ -40,5 +48,6 @@
 import PageHead from '../../components/PageHead.vue'
 import UserShell from '../../components/UserShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { logCategories, logNotes } from '../../data/userguide'
 </script>

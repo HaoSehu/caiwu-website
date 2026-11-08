@@ -31,6 +31,30 @@
             </table>
           </div>
         </section>
+
+        <section class="blk">
+          <h2>每个阶段的界面</h2>
+          <DocShot
+            src="admin-site-info.webp"
+            alt="站点信息设置"
+            caption="第一步 · 站点设置：站点名称、Logo、备案号与联系方式"
+          />
+          <DocShot
+            src="admin-products.webp"
+            alt="商品目录"
+            caption="第三步 · 商品目录：左侧分类树、右侧商品列表，新建商品与二级分组都在这一页"
+          />
+          <DocShot
+            src="admin-staff.webp"
+            alt="员工管理"
+            caption="第四步 · 员工管理：员工账号与角色绑定"
+          />
+          <DocShot
+            src="admin-roles.webp"
+            alt="角色权限"
+            caption="第四步 · 角色权限：角色是权限码的集合，资金写入类单独授权"
+          />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -41,6 +65,7 @@ import { RouterLink } from 'vue-router'
 import PageHead from '../../components/PageHead.vue'
 import SectionShell from '../../components/SectionShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { beginnerIndex, onboardingSteps } from '../../data/beginner'
 </script>
 

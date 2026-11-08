@@ -58,6 +58,12 @@
             <li v-for="t in payTroubleshooting" :key="t">{{ t }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>客户看到的选配页</h2>
+          <DocShot src="www-home.webp" alt="官网首页" caption="官网门户：从首页进入产品目录，按业务类型与机房筛选" />
+          <DocShot src="admin-orders.webp" alt="订单列表" caption="管理端 · 全部订单：支付完成后订单状态变为已支付，可进入详情核对快照" />
+        </section>
       </DocPage>
     </UserShell>
   </div>
@@ -67,6 +73,7 @@
 import PageHead from '../../components/PageHead.vue'
 import UserShell from '../../components/UserShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { paymentMethods, paymentStatuses, payTroubleshooting, purchaseFlow } from '../../data/userguide'
 </script>
 

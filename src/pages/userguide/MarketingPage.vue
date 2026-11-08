@@ -41,6 +41,13 @@
             <li v-for="r in marketingRules" :key="r">{{ r }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>营销界面</h2>
+          <DocShot src="admin-coupons.webp" alt="优惠券列表" caption="商品营销 · 优惠券列表：面额、类型、领取与使用情况" />
+          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广分销 · 推广概览：累计奖励、冻结中与已提现" />
+          <DocShot src="admin-referral-withdrawals.webp" alt="提现审核" caption="推广分销 · 提现审核：通过或驳回都写台账" />
+        </section>
       </DocPage>
     </UserShell>
   </div>
@@ -50,6 +57,7 @@
 import PageHead from '../../components/PageHead.vue'
 import UserShell from '../../components/UserShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { couponTypes, marketingRules, referralFlow } from '../../data/userguide'
 </script>
 

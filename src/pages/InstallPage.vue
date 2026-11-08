@@ -66,6 +66,16 @@
             <li v-for="r in dbPathRules" :key="r">{{ r }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>装好之后长这样</h2>
+          <p class="lead">管理端首页。数据看板、待办中心与收入趋势是登录后的第一屏。</p>
+          <DocShot
+            src="admin-dashboard.webp"
+            alt="管理端数据看板"
+            caption="管理端 · 数据看板：今日营业额、待办中心、商品收入占比与每日收入趋势"
+          />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -76,6 +86,7 @@ import { RouterLink } from 'vue-router'
 import PageHead from '../components/PageHead.vue'
 import SectionShell from '../components/SectionShell.vue'
 import DocPage from '../components/DocPage.vue'
+import DocShot from '../components/DocShot.vue'
 import { dbPathRules, installIndex } from '../data/install'
 </script>
 

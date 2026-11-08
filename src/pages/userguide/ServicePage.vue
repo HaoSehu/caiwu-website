@@ -54,6 +54,13 @@
             <li v-for="n in ticketNotes" :key="n">{{ n }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>服务与工单界面</h2>
+          <DocShot src="admin-services.webp" alt="服务列表" caption="服务管理 · 服务实例：实例编号、用户、产品、状态与到期时间" />
+          <DocShot src="admin-tickets.webp" alt="工单列表" caption="服务与工单 · 工单管理：按部门、优先级与状态筛选" />
+          <DocShot src="www-help.webp" alt="帮助中心" caption="官网门户 · 帮助中心：客户自助查找购买、支付、续费与实例管理指引" />
+        </section>
       </DocPage>
     </UserShell>
   </div>
@@ -63,5 +70,6 @@
 import PageHead from '../../components/PageHead.vue'
 import UserShell from '../../components/UserShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { consoleActions, serviceStatuses, ticketFlow, ticketNotes } from '../../data/userguide'
 </script>

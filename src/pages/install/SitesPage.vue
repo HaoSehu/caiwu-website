@@ -52,6 +52,15 @@
             <li>{{ trustedProxy.caution }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>四个站点各自的样子</h2>
+          <p class="lead">官网、控制台出现登录页时，说明站点本身已经起来了；后台则直接进数据看板。</p>
+          <div class="shot-grid">
+            <DocShot src="www-home.webp" alt="官网首页" caption="官网门户 · 首页" />
+            <DocShot src="admin-dashboard.webp" alt="管理端首页" caption="管理后台 · 数据看板" />
+          </div>
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -62,4 +71,19 @@ import PageHead from '../../components/PageHead.vue'
 import SectionShell from '../../components/SectionShell.vue'
 import DocPage from '../../components/DocPage.vue'
 import { apiRewrite, installIndex, siteRules, siteTable, spaRewrite, trustedProxy } from '../../data/install'
+import DocShot from '../../components/DocShot.vue'
 </script>
+
+<style scoped>
+.shot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s4);
+}
+
+@media (min-width: 1041px) {
+  .shot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>

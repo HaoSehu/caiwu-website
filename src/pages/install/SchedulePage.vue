@@ -44,6 +44,22 @@
             </table>
           </div>
         </section>
+
+        <section class="blk">
+          <h2>在后台看调度是否在跑</h2>
+          <p class="lead">日志中心 → 定时任务列出每个任务的名次、刷新周期、最后执行与下次执行时间。</p>
+          <DocShot
+            src="admin-schedules.webp"
+            alt="定时任务列表"
+            caption="日志中心 · 定时任务：最后执行与下次执行时间对齐，说明心跳正常"
+          />
+          <p class="lead" style="margin-top: var(--s5)">自动任务日志记录每次执行的耗时与结果；失败会有明确的错误摘要。</p>
+          <DocShot
+            src="admin-logs-tasks.webp"
+            alt="自动任务日志"
+            caption="日志中心 · 自动任务：每次心跳、队列认领与任务执行的耗时与摘要"
+          />
+        </section>
       </DocPage>
     </SectionShell>
   </div>
@@ -53,5 +69,6 @@
 import PageHead from '../../components/PageHead.vue'
 import SectionShell from '../../components/SectionShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import { cronConfig, cronNotes, installIndex, relayConfig } from '../../data/install'
 </script>

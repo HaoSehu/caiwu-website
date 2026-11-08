@@ -79,6 +79,14 @@
             <li v-for="r in ledgerRules" :key="r">{{ r }}</li>
           </ul>
         </section>
+
+        <section class="blk">
+          <h2>财务界面</h2>
+          <DocShot src="admin-orders.webp" alt="全部订单" caption="全部订单：订单号、用户、产品、计费周期、实付金额与状态" />
+          <DocShot src="admin-invoices.webp" alt="账单管理" caption="账单管理：账单是结算凭证，行项目与支付明细挂在账单下" />
+          <DocShot src="admin-recharges.webp" alt="充值记录" caption="充值记录：余额充值写台账，不产生第三方支付记录" />
+          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广分销 · 推广概览：返佣冻结与释放、提现审核" />
+        </section>
       </DocPage>
     </UserShell>
   </div>
@@ -88,6 +96,7 @@
 import PageHead from '../../components/PageHead.vue'
 import UserShell from '../../components/UserShell.vue'
 import DocPage from '../../components/DocPage.vue'
+import DocShot from '../../components/DocShot.vue'
 import {
   invoiceStatuses,
   ledgerEvents,
