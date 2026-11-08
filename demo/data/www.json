@@ -1,7 +1,7 @@
 {
     "meta": {
         "app": "www",
-        "exported_at": "2026-11-09T01:10:00+08:00"
+        "exported_at": "2026-11-09T05:23:29+08:00"
     },
     "endpoints": {
         "GET /v2/site/home": {
@@ -143,7 +143,7 @@
                     "category": "官方通知",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2026-07-12 14:02:23",
+                    "publish_at": "2026-07-15 14:02:23",
                     "updated_at": null
                 },
                 {
@@ -155,7 +155,7 @@
                     "category": "官方通知",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2026-07-02 13:39:10",
+                    "publish_at": "2026-07-05 13:39:10",
                     "updated_at": null
                 },
                 {
@@ -167,7 +167,7 @@
                     "category": "官方政策",
                     "is_pinned": 0,
                     "is_recommended": 1,
-                    "publish_at": "2026-05-26 08:01:53",
+                    "publish_at": "2026-05-29 08:01:53",
                     "updated_at": null
                 },
                 {
@@ -179,7 +179,7 @@
                     "category": "官方通知",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-09-30 03:47:41",
+                    "publish_at": "2025-10-03 03:47:41",
                     "updated_at": null
                 },
                 {
@@ -191,7 +191,7 @@
                     "category": "官方通知",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-09-18 01:41:44",
+                    "publish_at": "2025-09-21 01:41:44",
                     "updated_at": null
                 },
                 {
@@ -203,7 +203,7 @@
                     "category": "官方通知",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-06-21 21:15:37",
+                    "publish_at": "2025-06-24 21:15:37",
                     "updated_at": null
                 }
             ],
@@ -217,7 +217,7 @@
                     "category": "帮助",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2026-05-30 02:29:11",
+                    "publish_at": "2026-06-02 02:29:11",
                     "updated_at": null
                 },
                 {
@@ -229,7 +229,7 @@
                     "category": "帮助",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-08-22 09:02:07",
+                    "publish_at": "2025-08-25 09:02:07",
                     "updated_at": null
                 },
                 {
@@ -241,7 +241,7 @@
                     "category": "介绍",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-08-15 04:09:56",
+                    "publish_at": "2025-08-18 04:09:56",
                     "updated_at": null
                 },
                 {
@@ -253,7 +253,7 @@
                     "category": "介绍",
                     "is_pinned": 0,
                     "is_recommended": 0,
-                    "publish_at": "2025-01-19 09:30:16",
+                    "publish_at": "2025-01-22 09:30:16",
                     "updated_at": null
                 }
             ],
@@ -1810,7 +1810,7 @@
                     "title": "关于美国裸金属物理服务器（CN2区）带宽调整的通知",
                     "slug": "cn2",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1820,9 +1820,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 50,
-                    "publish_at": "2026-07-14 14:02:23",
+                    "publish_at": "2026-07-15 14:02:23",
                     "last_published_at": "2026-07-13 14:02:23",
-                    "created_at": "2026-07-14 14:02:23"
+                    "created_at": "2026-07-15 14:02:23"
                 },
                 {
                     "id": 23,
@@ -1834,7 +1834,7 @@
                     "title": "关于美国45.205.X.X节点及湖北十堰机房维护的重要通知",
                     "slug": "45205xx",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1844,9 +1844,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 18,
-                    "publish_at": "2026-07-04 13:39:10",
+                    "publish_at": "2026-07-05 13:39:10",
                     "last_published_at": "2026-07-03 13:39:10",
-                    "created_at": "2026-07-04 13:39:10"
+                    "created_at": "2026-07-05 13:39:10"
                 },
                 {
                     "id": 21,
@@ -1858,7 +1858,7 @@
                     "title": "【关于全面推行实名认证的通知】",
                     "slug": "notice-b8xbhjls",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -1868,9 +1868,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 50,
-                    "publish_at": "2026-05-28 08:01:53",
+                    "publish_at": "2026-05-29 08:01:53",
                     "last_published_at": "2026-05-27 08:01:53",
-                    "created_at": "2026-05-28 08:01:53"
+                    "created_at": "2026-05-29 08:01:53"
                 },
                 {
                     "id": 15,
@@ -1882,7 +1882,7 @@
                     "title": "创欧云计算 · 国庆狂欢盛典",
                     "slug": "notice-14",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1892,9 +1892,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 546,
-                    "publish_at": "2025-10-02 03:47:41",
+                    "publish_at": "2025-10-03 03:47:41",
                     "last_published_at": "2025-10-01 03:47:41",
-                    "created_at": "2025-10-02 03:49:28"
+                    "created_at": "2025-10-03 03:49:28"
                 },
                 {
                     "id": 14,
@@ -1906,7 +1906,7 @@
                     "title": "关于自动续费的说明",
                     "slug": "notice-13",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1916,9 +1916,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 371,
-                    "publish_at": "2025-09-20 01:41:44",
+                    "publish_at": "2025-09-21 01:41:44",
                     "last_published_at": "2025-09-19 01:41:44",
-                    "created_at": "2025-09-20 01:42:29"
+                    "created_at": "2025-09-21 01:42:29"
                 },
                 {
                     "id": 16,
@@ -1930,7 +1930,7 @@
                     "title": "宁波，成都，德阳业务调整",
                     "slug": "notice-9",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1940,9 +1940,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 503,
-                    "publish_at": "2025-06-23 21:15:37",
+                    "publish_at": "2025-06-24 21:15:37",
                     "last_published_at": "2025-06-22 21:15:37",
-                    "created_at": "2025-06-23 21:16:46"
+                    "created_at": "2025-06-24 21:16:46"
                 },
                 {
                     "id": 18,
@@ -1954,7 +1954,7 @@
                     "title": "美国三网精品迁移通知",
                     "slug": "notice-8",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -1964,9 +1964,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 819,
-                    "publish_at": "2025-06-23 21:14:04",
+                    "publish_at": "2025-06-24 21:14:04",
                     "last_published_at": "2025-06-22 21:14:04",
-                    "created_at": "2025-06-23 21:14:27"
+                    "created_at": "2025-06-24 21:14:27"
                 },
                 {
                     "id": 17,
@@ -1978,7 +1978,7 @@
                     "title": "服务条款",
                     "slug": "notice-6",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -1988,9 +1988,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 479,
-                    "publish_at": "2025-01-22 04:20:17",
+                    "publish_at": "2025-01-23 04:20:17",
                     "last_published_at": "2025-01-21 04:20:17",
-                    "created_at": "2025-01-22 04:20:43"
+                    "created_at": "2025-01-23 04:20:43"
                 },
                 {
                     "id": 20,
@@ -2002,7 +2002,7 @@
                     "title": "隐私政策",
                     "slug": "notice-5",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -2012,9 +2012,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 422,
-                    "publish_at": "2025-01-22 03:33:35",
+                    "publish_at": "2025-01-23 03:33:35",
                     "last_published_at": "2025-01-21 03:33:35",
-                    "created_at": "2025-01-22 03:34:34"
+                    "created_at": "2025-01-23 03:34:34"
                 },
                 {
                     "id": 19,
@@ -2026,7 +2026,7 @@
                     "title": "退款协议与增值服务说明",
                     "slug": "notice-4",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -2036,9 +2036,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 363,
-                    "publish_at": "2025-01-22 02:33:35",
+                    "publish_at": "2025-01-23 02:33:35",
                     "last_published_at": "2025-01-21 02:33:35",
-                    "created_at": "2025-01-22 02:34:06"
+                    "created_at": "2025-01-23 02:34:06"
                 }
             ],
             "total": 10,
@@ -2051,7 +2051,7 @@
                     "type": "notice",
                     "name": "官方政策",
                     "slug": "notice-4",
-                    "description": "演练版示例分类 7",
+                    "description": "示例分类 7",
                     "articles_count": 4
                 },
                 {
@@ -2060,7 +2060,7 @@
                     "type": "notice",
                     "name": "官方通知",
                     "slug": "notice-6",
-                    "description": "演练版示例分类 8",
+                    "description": "示例分类 8",
                     "articles_count": 6
                 }
             ]
@@ -2077,7 +2077,7 @@
                     "title": "Linux 带宽测速脚本",
                     "slug": "linux",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -2087,9 +2087,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 27,
-                    "publish_at": "2026-06-01 02:29:11",
+                    "publish_at": "2026-06-02 02:29:11",
                     "last_published_at": "2026-05-31 02:29:11",
-                    "created_at": "2026-06-01 02:29:11"
+                    "created_at": "2026-06-02 02:29:11"
                 },
                 {
                     "id": 11,
@@ -2101,7 +2101,7 @@
                     "title": "win登录到远程Linux服务器",
                     "slug": "winlinux-12",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -2111,9 +2111,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 533,
-                    "publish_at": "2025-08-24 09:02:07",
+                    "publish_at": "2025-08-25 09:02:07",
                     "last_published_at": "2025-08-23 09:02:07",
-                    "created_at": "2025-08-24 09:02:43"
+                    "created_at": "2025-08-25 09:02:43"
                 },
                 {
                     "id": 12,
@@ -2125,7 +2125,7 @@
                     "title": "各产品测试IP",
                     "slug": "ip-10",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -2135,9 +2135,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 747,
-                    "publish_at": "2025-08-17 04:09:56",
+                    "publish_at": "2025-08-18 04:09:56",
                     "last_published_at": "2025-08-16 04:09:56",
-                    "created_at": "2025-08-17 04:10:12"
+                    "created_at": "2025-08-18 04:10:12"
                 },
                 {
                     "id": 13,
@@ -2149,7 +2149,7 @@
                     "title": "各线路介绍",
                     "slug": "help-1",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -2159,9 +2159,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 689,
-                    "publish_at": "2025-01-21 09:30:16",
+                    "publish_at": "2025-01-22 09:30:16",
                     "last_published_at": "2025-01-20 09:30:16",
-                    "created_at": "2025-01-21 09:30:47"
+                    "created_at": "2025-01-22 09:30:47"
                 }
             ],
             "total": 4,
@@ -2174,7 +2174,7 @@
                     "type": "help",
                     "name": "介绍",
                     "slug": "help-3",
-                    "description": "演练版示例分类 5",
+                    "description": "示例分类 5",
                     "articles_count": 2
                 },
                 {
@@ -2183,7 +2183,7 @@
                     "type": "help",
                     "name": "帮助",
                     "slug": "help-5",
-                    "description": "演练版示例分类 6",
+                    "description": "示例分类 6",
                     "articles_count": 2
                 }
             ]
@@ -2200,7 +2200,7 @@
                     "title": "关于美国裸金属物理服务器（CN2区）带宽调整的通知",
                     "slug": "cn2",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -2210,9 +2210,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 50,
-                    "publish_at": "2026-07-14 14:02:23",
+                    "publish_at": "2026-07-15 14:02:23",
                     "last_published_at": "2026-07-13 14:02:23",
-                    "created_at": "2026-07-14 14:02:23"
+                    "created_at": "2026-07-15 14:02:23"
                 },
                 {
                     "id": 23,
@@ -2224,7 +2224,7 @@
                     "title": "关于美国45.205.X.X节点及湖北十堰机房维护的重要通知",
                     "slug": "45205xx",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -2234,9 +2234,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 18,
-                    "publish_at": "2026-07-04 13:39:10",
+                    "publish_at": "2026-07-05 13:39:10",
                     "last_published_at": "2026-07-03 13:39:10",
-                    "created_at": "2026-07-04 13:39:10"
+                    "created_at": "2026-07-05 13:39:10"
                 },
                 {
                     "id": 21,
@@ -2248,7 +2248,7 @@
                     "title": "【关于全面推行实名认证的通知】",
                     "slug": "notice-b8xbhjls",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -2258,9 +2258,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 50,
-                    "publish_at": "2026-05-28 08:01:53",
+                    "publish_at": "2026-05-29 08:01:53",
                     "last_published_at": "2026-05-27 08:01:53",
-                    "created_at": "2026-05-28 08:01:53"
+                    "created_at": "2026-05-29 08:01:53"
                 },
                 {
                     "id": 15,
@@ -2272,7 +2272,7 @@
                     "title": "创欧云计算 · 国庆狂欢盛典",
                     "slug": "notice-14",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -2282,9 +2282,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 546,
-                    "publish_at": "2025-10-02 03:47:41",
+                    "publish_at": "2025-10-03 03:47:41",
                     "last_published_at": "2025-10-01 03:47:41",
-                    "created_at": "2025-10-02 03:49:28"
+                    "created_at": "2025-10-03 03:49:28"
                 },
                 {
                     "id": 14,
@@ -2296,7 +2296,7 @@
                     "title": "关于自动续费的说明",
                     "slug": "notice-13",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -2306,9 +2306,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 371,
-                    "publish_at": "2025-09-20 01:41:44",
+                    "publish_at": "2025-09-21 01:41:44",
                     "last_published_at": "2025-09-19 01:41:44",
-                    "created_at": "2025-09-20 01:42:29"
+                    "created_at": "2025-09-21 01:42:29"
                 }
             ],
             "help_articles": [
@@ -2322,7 +2322,7 @@
                     "title": "Linux 带宽测速脚本",
                     "slug": "linux",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -2332,9 +2332,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 27,
-                    "publish_at": "2026-06-01 02:29:11",
+                    "publish_at": "2026-06-02 02:29:11",
                     "last_published_at": "2026-05-31 02:29:11",
-                    "created_at": "2026-06-01 02:29:11"
+                    "created_at": "2026-06-02 02:29:11"
                 },
                 {
                     "id": 11,
@@ -2346,7 +2346,7 @@
                     "title": "win登录到远程Linux服务器",
                     "slug": "winlinux-12",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -2356,9 +2356,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 533,
-                    "publish_at": "2025-08-24 09:02:07",
+                    "publish_at": "2025-08-25 09:02:07",
                     "last_published_at": "2025-08-23 09:02:07",
-                    "created_at": "2025-08-24 09:02:43"
+                    "created_at": "2025-08-25 09:02:43"
                 },
                 {
                     "id": 12,
@@ -2370,7 +2370,7 @@
                     "title": "各产品测试IP",
                     "slug": "ip-10",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -2380,9 +2380,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 747,
-                    "publish_at": "2025-08-17 04:09:56",
+                    "publish_at": "2025-08-18 04:09:56",
                     "last_published_at": "2025-08-16 04:09:56",
-                    "created_at": "2025-08-17 04:10:12"
+                    "created_at": "2025-08-18 04:10:12"
                 },
                 {
                     "id": 13,
@@ -2394,7 +2394,7 @@
                     "title": "各线路介绍",
                     "slug": "help-1",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -2404,9 +2404,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 689,
-                    "publish_at": "2025-01-21 09:30:16",
+                    "publish_at": "2025-01-22 09:30:16",
                     "last_published_at": "2025-01-20 09:30:16",
-                    "created_at": "2025-01-21 09:30:47"
+                    "created_at": "2025-01-22 09:30:47"
                 }
             ],
             "notice_categories": [
@@ -2416,7 +2416,7 @@
                     "type": "notice",
                     "name": "官方政策",
                     "slug": "notice-4",
-                    "description": "演练版示例分类 7",
+                    "description": "示例分类 7",
                     "articles_count": 4
                 },
                 {
@@ -2425,7 +2425,7 @@
                     "type": "notice",
                     "name": "官方通知",
                     "slug": "notice-6",
-                    "description": "演练版示例分类 8",
+                    "description": "示例分类 8",
                     "articles_count": 6
                 }
             ],
@@ -2436,7 +2436,7 @@
                     "type": "help",
                     "name": "介绍",
                     "slug": "help-3",
-                    "description": "演练版示例分类 5",
+                    "description": "示例分类 5",
                     "articles_count": 2
                 },
                 {
@@ -2445,7 +2445,7 @@
                     "type": "help",
                     "name": "帮助",
                     "slug": "help-5",
-                    "description": "演练版示例分类 6",
+                    "description": "示例分类 6",
                     "articles_count": 2
                 }
             ]
@@ -4574,7 +4574,7 @@
                 "title": "关于美国裸金属物理服务器（CN2区）带宽调整的通知",
                 "slug": "cn2",
                 "summary": null,
-                "excerpt": "演练版示例摘要",
+                "excerpt": "示例摘要",
                 "category_name": "官方通知",
                 "category": "官方通知",
                 "category_slug": "notice-6",
@@ -4584,12 +4584,12 @@
                 "is_pinned": 0,
                 "is_recommended": 0,
                 "view_count": 51,
-                "publish_at": "2026-07-14 14:02:23",
+                "publish_at": "2026-07-15 14:02:23",
                 "last_published_at": "2026-07-13 14:02:23",
-                "created_at": "2026-07-14 14:02:23",
-                "content": "<p>这是演练版中的示例内容 #24。真实内容请访问生产站点。</p>",
+                "created_at": "2026-07-15 14:02:23",
+                "content": "<p>这是在线演示中的示例内容 #24。真实内容请访问生产站点。</p>",
                 "keywords": null,
-                "updated_at": "2026-11-09 01:10:03"
+                "updated_at": "2026-11-09 05:23:32"
             }
         },
         "GET /v2/site/help-articles/*": {
@@ -4603,7 +4603,7 @@
                 "title": "Linux 带宽测速脚本",
                 "slug": "linux",
                 "summary": null,
-                "excerpt": "演练版示例摘要",
+                "excerpt": "示例摘要",
                 "category_name": "帮助",
                 "category": "帮助",
                 "category_slug": "help-5",
@@ -4613,12 +4613,12 @@
                 "is_pinned": 0,
                 "is_recommended": 0,
                 "view_count": 28,
-                "publish_at": "2026-06-01 02:29:11",
+                "publish_at": "2026-06-02 02:29:11",
                 "last_published_at": "2026-05-31 02:29:11",
-                "created_at": "2026-06-01 02:29:11",
-                "content": "<p>这是演练版中的示例内容 #22。真实内容请访问生产站点。</p>",
+                "created_at": "2026-06-02 02:29:11",
+                "content": "<p>这是在线演示中的示例内容 #22。真实内容请访问生产站点。</p>",
                 "keywords": null,
-                "updated_at": "2026-11-09 01:10:03"
+                "updated_at": "2026-11-09 05:23:32"
             }
         },
         "POST /v2/site/products/*/quote|{\"billing_cycle\":\"monthly\",\"quantity\":1}": {
@@ -4635,8 +4635,8 @@
             "coupon": null,
             "user_coupon_id": 0,
             "available_coupons": [],
-            "quote_token": "quote_han5ikbzntctbhxmo5bvyuq9auhnaznjyqzgsgtoo7vvl6r1",
-            "quote_expires_at": "2026-11-09T01:20:03+08:00",
+            "quote_token": "quote_nnlosssb0xyxbabzxrtvza2wixe9yeohsrmewts4yovozklc",
+            "quote_expires_at": "2026-11-09T05:33:32+08:00",
             "items": []
         }
     }

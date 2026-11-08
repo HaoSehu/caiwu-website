@@ -33,9 +33,9 @@
         <p class="hint">{{ current.desc }}</p>
 
         <div v-if="!demoAvailable" class="unavailable">
-          <strong>演练版暂未随本站发布</strong>
+          <strong>在线演示暂未随本站发布</strong>
           <p>
-            演练版由源码仓库构建后生成静态产物。当前这次发布没有包含它，
+            在线演示由源码仓库构建后生成静态产物。当前这次发布没有包含它，
             因此无法在这里嵌入界面。稍后重新发布即可恢复；需要先看界面的话，
             可以读使用文档里的截图，或直接从源码仓库本地启动。
           </p>
@@ -80,7 +80,7 @@ import { demoApps, demoNotes } from '../data/demo'
 const active = ref(demoApps[0].key)
 const reloadKey = ref(0)
 
-// 演练版由 caiwu 仓库构建后拼进 /demo/。构建未就绪时 iframe 会是空白，
+// 在线演示由 caiwu 仓库构建后拼进 /demo/。构建未就绪时 iframe 会是空白，
 // 这里先探测入口是否可用，不可用时给出明确说明而不是留白。
 const demoAvailable = ref(true)
 
@@ -92,7 +92,7 @@ function reload() {
 
 onMounted(async () => {
   // 站点是 History 路由，任何未知路径都会回退到自己的 index.html，
-  // 所以只看状态码或响应都判断不出来；改为识别演练版入口自身的内容特征。
+  // 所以只看状态码或响应都判断不出来；改为识别在线演示入口自身的内容特征。
   try {
     const res = await fetch(demoApps[0].url, { headers: { accept: 'text/html' } })
     if (!res.ok) {
@@ -100,7 +100,7 @@ onMounted(async () => {
       return
     }
     const html = await res.text()
-    // 演练版入口由 caiwu 的前端产物生成，带自己的 title 与资源目录；
+    // 在线演示入口由 caiwu 的前端产物生成，带自己的 title 与资源目录；
     // 站点回退页没有 /demo/ 下的资源引用。
     demoAvailable.value = /\/demo\/admin\/assets\//.test(html)
   } catch {

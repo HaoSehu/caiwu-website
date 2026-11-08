@@ -91,5 +91,5 @@ const server = http.createServer((request, response) => {
 
 server.listen(port, '127.0.0.1', () => {
   console.log(`静态服务器已启动：http://127.0.0.1:${port}/`);
-  console.log(`演练版入口：http://127.0.0.1:${port}/demo/`);
+  console.log(`在线演示入口：http://127.0.0.1:${port}/demo/`);
 });

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 演练版端到端冒烟：三端在静态数据集上能渲染、不发出真实网络请求。
+ * 在线演示端到端冒烟：三端在静态数据集上能渲染、不发出真实网络请求。
  *
  * 用法：npm run demo:build && node demo/smoke-demo.mjs
  * 依赖：Playwright（从 caiwu 仓库或本仓库解析，含 chromium）。
@@ -142,7 +142,7 @@ async function main() {
     const entry = await browser.newPage();
     await entry.goto(`${ORIGIN}/demo/`, { waitUntil: 'domcontentloaded' });
     const entryText = await entry.evaluate(() => document.body.innerText);
-    if (!entryText.includes('演练版')) {
+    if (!entryText.includes('在线演示')) {
       failures.push('入口页: 未渲染入口说明');
     }
     await entry.close();
@@ -162,7 +162,7 @@ async function main() {
     }
     process.exit(1);
   }
-  console.log('\n三端演练版冒烟通过');
+  console.log('\n三端在线演示冒烟通过');
 }
 
 main().catch((error) => {

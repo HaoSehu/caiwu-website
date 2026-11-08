@@ -1,7 +1,7 @@
 {
     "meta": {
         "app": "console",
-        "exported_at": "2026-11-09T01:10:00+08:00"
+        "exported_at": "2026-11-09T05:23:29+08:00"
     },
     "endpoints": {
         "GET /v2/client/auth/info": {
@@ -31,7 +31,7 @@
             "real_name": "演示用户1",
             "id_card_masked": "D****************1",
             "verification_status": 5,
-            "verification_message": "演练版示例",
+            "verification_message": "示例备注",
             "verification_certify_id": null,
             "login_email_alert": 1,
             "login_notify": 1,
@@ -45,10 +45,10 @@
                 "account": "",
                 "is_bound": false
             },
-            "last_login_at": "2026-11-08 03:07:33",
+            "last_login_at": "2026-11-09 03:07:33",
             "last_login_ip": "127.0.0.1",
             "verified_at": null,
-            "created_at": "2025-01-17 22:30:14",
+            "created_at": "2025-01-18 22:30:14",
             "account_policy": {
                 "require_verification": false,
                 "require_phone": false,
@@ -90,7 +90,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "100.00",
                     "expires_at": null,
-                    "created_at": "2026-11-08 03:51:07",
+                    "created_at": "2026-11-09 03:51:07",
                     "auto_renew": 0,
                     "product": {
                         "name": "折扣测试商品-030442",
@@ -142,7 +142,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "100.00",
                     "expires_at": null,
-                    "created_at": "2026-11-08 03:07:45",
+                    "created_at": "2026-11-09 03:07:45",
                     "auto_renew": 0,
                     "product": {
                         "name": "折扣测试商品-030442",
@@ -194,7 +194,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "0.01",
                     "expires_at": null,
-                    "created_at": "2026-11-06 22:48:53",
+                    "created_at": "2026-11-07 22:48:53",
                     "auto_renew": 0,
                     "product": {
                         "name": "测试商品-购买流程验证",
@@ -246,7 +246,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "0.01",
                     "expires_at": null,
-                    "created_at": "2026-11-06 22:43:37",
+                    "created_at": "2026-11-07 22:43:37",
                     "auto_renew": 0,
                     "product": {
                         "name": "测试商品-购买流程验证",
@@ -298,7 +298,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "0.01",
                     "expires_at": null,
-                    "created_at": "2026-11-06 22:41:53",
+                    "created_at": "2026-11-07 22:41:53",
                     "auto_renew": 0,
                     "product": {
                         "name": "测试商品-购买流程验证",
@@ -350,7 +350,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "0.01",
                     "expires_at": null,
-                    "created_at": "2026-11-06 22:41:06",
+                    "created_at": "2026-11-07 22:41:06",
                     "auto_renew": 0,
                     "product": {
                         "name": "测试商品-购买流程验证",
@@ -402,7 +402,7 @@
                     "billing_cycle_label": "月付",
                     "amount": "0.01",
                     "expires_at": null,
-                    "created_at": "2026-11-06 22:24:56",
+                    "created_at": "2026-11-07 22:24:56",
                     "auto_renew": 0,
                     "product": {
                         "name": "测试商品-购买流程验证",
@@ -453,8 +453,8 @@
                     "billing_cycle": "monthly",
                     "billing_cycle_label": "月付",
                     "amount": "20.00",
-                    "expires_at": "2026-12-05 16:12:44",
-                    "created_at": "2026-11-05 16:12:34",
+                    "expires_at": "2026-12-06 16:12:44",
+                    "created_at": "2026-11-06 16:12:34",
                     "auto_renew": 0,
                     "product": {
                         "name": "gscs-2vcpu-2gib",
@@ -546,8 +546,8 @@
                     "billing_cycle": "monthly",
                     "billing_cycle_label": "月付",
                     "amount": "20.00",
-                    "expires_at": "2026-04-29 21:11:27",
-                    "created_at": "2026-04-26 08:48:49",
+                    "expires_at": "2026-04-30 21:11:27",
+                    "created_at": "2026-04-27 08:48:49",
                     "auto_renew": 1,
                     "product": {
                         "name": "gscs-2vcpu-2gib",
@@ -639,8 +639,8 @@
                     "billing_cycle": "monthly",
                     "billing_cycle_label": "月付",
                     "amount": "25.00",
-                    "expires_at": "2026-04-23 17:12:21",
-                    "created_at": "2026-04-23 04:41:25",
+                    "expires_at": "2026-04-24 17:12:21",
+                    "created_at": "2026-04-24 04:41:25",
                     "auto_renew": 1,
                     "product": {
                         "name": "gscs-4vcpu-4gib",
@@ -732,8 +732,8 @@
                     "billing_cycle": "monthly",
                     "billing_cycle_label": "月付",
                     "amount": "48.00",
-                    "expires_at": "2026-04-23 17:13:11",
-                    "created_at": "2026-04-22 05:45:21",
+                    "expires_at": "2026-04-24 17:13:11",
+                    "created_at": "2026-04-23 05:45:21",
                     "auto_renew": 1,
                     "product": {
                         "name": "gscs-2vcpu-2gib",
@@ -835,8 +835,8 @@
                     "billing_cycle": "monthly",
                     "billing_cycle_label": "月付",
                     "amount": "9.90",
-                    "expires_at": "2026-08-20 23:56:32",
-                    "created_at": "2026-04-20 15:56:09",
+                    "expires_at": "2026-08-21 23:56:32",
+                    "created_at": "2026-04-21 15:56:09",
                     "auto_renew": 0,
                     "product": {
                         "name": "2 vCPU 2G",
@@ -1382,12 +1382,12 @@
                         "amount": "18.50",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-08 03:51:07"
+                        "paid_at": "2026-11-09 03:51:07"
                     },
                     "due_date": "2026-11-14",
-                    "created_at": "2026-11-08 03:50:54",
-                    "paid_at": "2026-11-08 03:51:07",
-                    "finished_at": "2026-11-08 03:51:07"
+                    "created_at": "2026-11-09 03:50:54",
+                    "paid_at": "2026-11-09 03:51:07",
+                    "finished_at": "2026-11-09 03:51:07"
                 },
                 {
                     "id": 3326,
@@ -1431,9 +1431,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-14",
-                    "created_at": "2026-11-08 03:13:10",
+                    "created_at": "2026-11-09 03:13:10",
                     "paid_at": null,
-                    "finished_at": "2026-11-08 03:13:47"
+                    "finished_at": "2026-11-09 03:13:47"
                 },
                 {
                     "id": 3325,
@@ -1484,12 +1484,12 @@
                         "amount": "26.64",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-08 03:07:45"
+                        "paid_at": "2026-11-09 03:07:45"
                     },
                     "due_date": "2026-11-14",
-                    "created_at": "2026-11-08 03:05:59",
-                    "paid_at": "2026-11-08 03:07:45",
-                    "finished_at": "2026-11-08 03:07:45"
+                    "created_at": "2026-11-09 03:05:59",
+                    "paid_at": "2026-11-09 03:07:45",
+                    "finished_at": "2026-11-09 03:07:45"
                 },
                 {
                     "id": 3323,
@@ -1540,12 +1540,12 @@
                         "amount": "0.00",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-06 22:48:53"
+                        "paid_at": "2026-11-07 22:48:53"
                     },
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:48:52",
-                    "paid_at": "2026-11-06 22:48:53",
-                    "finished_at": "2026-11-06 22:48:53"
+                    "created_at": "2026-11-07 22:48:52",
+                    "paid_at": "2026-11-07 22:48:53",
+                    "finished_at": "2026-11-07 22:48:53"
                 },
                 {
                     "id": 3322,
@@ -1596,12 +1596,12 @@
                         "amount": "0.00",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-06 22:43:37"
+                        "paid_at": "2026-11-07 22:43:37"
                     },
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:43:03",
-                    "paid_at": "2026-11-06 22:43:37",
-                    "finished_at": "2026-11-06 22:43:37"
+                    "created_at": "2026-11-07 22:43:03",
+                    "paid_at": "2026-11-07 22:43:37",
+                    "finished_at": "2026-11-07 22:43:37"
                 },
                 {
                     "id": 3321,
@@ -1652,12 +1652,12 @@
                         "amount": "0.00",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-06 22:41:53"
+                        "paid_at": "2026-11-07 22:41:53"
                     },
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:41:48",
-                    "paid_at": "2026-11-06 22:41:53",
-                    "finished_at": "2026-11-06 22:41:53"
+                    "created_at": "2026-11-07 22:41:48",
+                    "paid_at": "2026-11-07 22:41:53",
+                    "finished_at": "2026-11-07 22:41:53"
                 },
                 {
                     "id": 3320,
@@ -1708,12 +1708,12 @@
                         "amount": "0.00",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-06 22:41:05"
+                        "paid_at": "2026-11-07 22:41:05"
                     },
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:41:00",
-                    "paid_at": "2026-11-06 22:41:05",
-                    "finished_at": "2026-11-06 22:41:05"
+                    "created_at": "2026-11-07 22:41:00",
+                    "paid_at": "2026-11-07 22:41:05",
+                    "finished_at": "2026-11-07 22:41:05"
                 },
                 {
                     "id": 3319,
@@ -1757,9 +1757,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:33:39",
+                    "created_at": "2026-11-07 22:33:39",
                     "paid_at": null,
-                    "finished_at": "2026-11-06 22:33:39"
+                    "finished_at": "2026-11-07 22:33:39"
                 },
                 {
                     "id": 3318,
@@ -1803,9 +1803,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:33:39",
+                    "created_at": "2026-11-07 22:33:39",
                     "paid_at": null,
-                    "finished_at": "2026-11-06 22:33:39"
+                    "finished_at": "2026-11-07 22:33:39"
                 },
                 {
                     "id": 3317,
@@ -1849,9 +1849,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:30:08",
+                    "created_at": "2026-11-07 22:30:08",
                     "paid_at": null,
-                    "finished_at": "2026-11-06 22:30:54"
+                    "finished_at": "2026-11-07 22:30:54"
                 },
                 {
                     "id": 3316,
@@ -1902,12 +1902,12 @@
                         "amount": "0.00",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-06 22:24:56"
+                        "paid_at": "2026-11-07 22:24:56"
                     },
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:24:49",
-                    "paid_at": "2026-11-06 22:24:56",
-                    "finished_at": "2026-11-06 22:24:56"
+                    "created_at": "2026-11-07 22:24:49",
+                    "paid_at": "2026-11-07 22:24:56",
+                    "finished_at": "2026-11-07 22:24:56"
                 },
                 {
                     "id": 3315,
@@ -1951,9 +1951,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-12",
-                    "created_at": "2026-11-06 22:19:06",
+                    "created_at": "2026-11-07 22:19:06",
                     "paid_at": null,
-                    "finished_at": "2026-11-06 22:19:06"
+                    "finished_at": "2026-11-07 22:19:06"
                 },
                 {
                     "id": 3301,
@@ -1997,9 +1997,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-11",
-                    "created_at": "2026-11-05 19:39:23",
+                    "created_at": "2026-11-06 19:39:23",
                     "paid_at": null,
-                    "finished_at": "2026-11-05 20:14:34"
+                    "finished_at": "2026-11-06 20:14:34"
                 },
                 {
                     "id": 3300,
@@ -2043,7 +2043,7 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-11",
-                    "created_at": "2026-11-05 17:38:47",
+                    "created_at": "2026-11-06 17:38:47",
                     "paid_at": null,
                     "finished_at": null
                 },
@@ -2096,12 +2096,12 @@
                         "amount": "7.40",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-05 16:12:34"
+                        "paid_at": "2026-11-06 16:12:34"
                     },
                     "due_date": "2026-11-11",
-                    "created_at": "2026-11-05 16:12:29",
-                    "paid_at": "2026-11-05 16:12:34",
-                    "finished_at": "2026-11-05 16:12:34"
+                    "created_at": "2026-11-06 16:12:29",
+                    "paid_at": "2026-11-06 16:12:34",
+                    "finished_at": "2026-11-06 16:12:34"
                 },
                 {
                     "id": 3298,
@@ -2145,9 +2145,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-11-07",
-                    "created_at": "2026-11-01 19:12:30",
+                    "created_at": "2026-11-02 19:12:30",
                     "paid_at": null,
-                    "finished_at": "2026-11-01 19:12:50"
+                    "finished_at": "2026-11-02 19:12:50"
                 },
                 {
                     "id": 3150,
@@ -2191,9 +2191,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-09-04",
-                    "created_at": "2026-08-29 04:21:29",
+                    "created_at": "2026-08-30 04:21:29",
                     "paid_at": null,
-                    "finished_at": "2026-08-29 04:33:05"
+                    "finished_at": "2026-08-30 04:33:05"
                 },
                 {
                     "id": 3149,
@@ -2237,9 +2237,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-09-04",
-                    "created_at": "2026-08-29 02:41:30",
+                    "created_at": "2026-08-30 02:41:30",
                     "paid_at": null,
-                    "finished_at": "2026-08-29 02:48:04"
+                    "finished_at": "2026-08-30 02:48:04"
                 },
                 {
                     "id": 3136,
@@ -2283,9 +2283,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-09-01",
-                    "created_at": "2026-08-26 04:12:33",
+                    "created_at": "2026-08-27 04:12:33",
                     "paid_at": null,
-                    "finished_at": "2026-08-26 04:33:05"
+                    "finished_at": "2026-08-27 04:33:05"
                 },
                 {
                     "id": 3096,
@@ -2329,9 +2329,9 @@
                     },
                     "payment_summary": null,
                     "due_date": "2026-08-19",
-                    "created_at": "2026-08-12 16:06:09",
+                    "created_at": "2026-08-13 16:06:09",
                     "paid_at": null,
-                    "finished_at": "2026-08-12 16:21:02"
+                    "finished_at": "2026-08-13 16:21:02"
                 }
             ],
             "total": 116,
@@ -2357,8 +2357,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-11-07 21:59:19",
-                    "created_at": "2026-11-07 01:21:30"
+                    "finished_at": "2026-11-08 21:59:19",
+                    "created_at": "2026-11-08 01:21:30"
                 },
                 {
                     "id": 518,
@@ -2376,9 +2376,9 @@
                     "invoice_no": "zd202611052243032823",
                     "invoice_type": "new",
                     "invoice_status": 1,
-                    "paid_at": "2026-11-06 22:43:37",
-                    "finished_at": "2026-11-06 22:43:37",
-                    "created_at": "2026-11-06 22:43:19"
+                    "paid_at": "2026-11-07 22:43:37",
+                    "finished_at": "2026-11-07 22:43:37",
+                    "created_at": "2026-11-07 22:43:19"
                 },
                 {
                     "id": 511,
@@ -2398,7 +2398,7 @@
                     "invoice_status": 0,
                     "paid_at": null,
                     "finished_at": null,
-                    "created_at": "2026-11-05 23:34:47"
+                    "created_at": "2026-11-06 23:34:47"
                 },
                 {
                     "id": 510,
@@ -2417,8 +2417,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-11-05 16:16:00",
-                    "created_at": "2026-11-05 15:36:28"
+                    "finished_at": "2026-11-06 16:16:00",
+                    "created_at": "2026-11-06 15:36:28"
                 },
                 {
                     "id": 509,
@@ -2437,8 +2437,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-11-02 01:45:22",
-                    "created_at": "2026-11-02 00:38:18"
+                    "finished_at": "2026-11-03 01:45:22",
+                    "created_at": "2026-11-03 00:38:18"
                 },
                 {
                     "id": 508,
@@ -2457,8 +2457,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-11-02 01:46:00",
-                    "created_at": "2026-11-02 00:38:12"
+                    "finished_at": "2026-11-03 01:46:00",
+                    "created_at": "2026-11-03 00:38:12"
                 },
                 {
                     "id": 432,
@@ -2477,8 +2477,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-31 16:30:30",
-                    "created_at": "2026-08-31 05:09:13"
+                    "finished_at": "2026-09-01 16:30:30",
+                    "created_at": "2026-09-01 05:09:13"
                 },
                 {
                     "id": 424,
@@ -2497,8 +2497,8 @@
                     "invoice_type": "new",
                     "invoice_status": 4,
                     "paid_at": null,
-                    "finished_at": "2026-08-26 04:33:05",
-                    "created_at": "2026-08-26 04:12:40"
+                    "finished_at": "2026-08-27 04:33:05",
+                    "created_at": "2026-08-27 04:12:40"
                 },
                 {
                     "id": 414,
@@ -2517,8 +2517,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-20 09:48:06",
-                    "created_at": "2026-08-20 09:29:02"
+                    "finished_at": "2026-08-21 09:48:06",
+                    "created_at": "2026-08-21 09:29:02"
                 },
                 {
                     "id": 401,
@@ -2537,8 +2537,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-18 00:18:04",
-                    "created_at": "2026-08-18 00:07:04"
+                    "finished_at": "2026-08-19 00:18:04",
+                    "created_at": "2026-08-19 00:07:04"
                 },
                 {
                     "id": 398,
@@ -2557,8 +2557,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-15 17:03:04",
-                    "created_at": "2026-08-15 16:49:40"
+                    "finished_at": "2026-08-16 17:03:04",
+                    "created_at": "2026-08-16 16:49:40"
                 },
                 {
                     "id": 396,
@@ -2577,8 +2577,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-15 04:33:04",
-                    "created_at": "2026-08-15 04:13:24"
+                    "finished_at": "2026-08-16 04:33:04",
+                    "created_at": "2026-08-16 04:13:24"
                 },
                 {
                     "id": 364,
@@ -2597,8 +2597,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-08-01 23:27:03",
-                    "created_at": "2026-07-26 00:34:59"
+                    "finished_at": "2026-08-02 23:27:03",
+                    "created_at": "2026-07-27 00:34:59"
                 },
                 {
                     "id": 287,
@@ -2617,8 +2617,8 @@
                     "invoice_type": "new",
                     "invoice_status": 4,
                     "paid_at": null,
-                    "finished_at": "2026-07-16 05:00:37",
-                    "created_at": "2026-07-16 04:41:21"
+                    "finished_at": "2026-07-17 05:00:37",
+                    "created_at": "2026-07-17 04:41:21"
                 },
                 {
                     "id": 286,
@@ -2637,8 +2637,8 @@
                     "invoice_type": "",
                     "invoice_status": null,
                     "paid_at": null,
-                    "finished_at": "2026-07-16 04:15:36",
-                    "created_at": "2026-07-16 04:04:14"
+                    "finished_at": "2026-07-17 04:15:36",
+                    "created_at": "2026-07-17 04:04:14"
                 }
             ],
             "total": 23,
@@ -2657,16 +2657,16 @@
                     "service_id": 355,
                     "assignee_id": null,
                     "close_reason": null,
-                    "created_at": "2026-11-06 22:58:24",
-                    "updated_at": "2026-11-06 22:58:44",
+                    "created_at": "2026-11-07 22:58:24",
+                    "updated_at": "2026-11-07 22:58:44",
                     "replies": [
                         {
                             "id": 212,
                             "ticket_id": 89,
                             "user_id": 1,
-                            "content": "这是演练版中的示例回复，用于演示界面效果。",
+                            "content": "这是在线演示中的示例回复，用于演示界面效果。",
                             "is_staff": 0,
-                            "created_at": "2026-11-10 01:09:37"
+                            "created_at": "2026-11-11 05:23:10"
                         }
                     ]
                 },
@@ -2680,16 +2680,16 @@
                     "service_id": 89,
                     "assignee_id": 1,
                     "close_reason": null,
-                    "created_at": "2026-08-26 02:57:39",
-                    "updated_at": "2026-08-26 19:50:06",
+                    "created_at": "2026-08-27 02:57:39",
+                    "updated_at": "2026-08-27 19:50:06",
                     "replies": [
                         {
                             "id": 188,
                             "ticket_id": 80,
                             "user_id": 1,
-                            "content": "这是演练版中的示例回复，用于演示界面效果。",
+                            "content": "这是在线演示中的示例回复，用于演示界面效果。",
                             "is_staff": 0,
-                            "created_at": "2026-11-10 01:09:37"
+                            "created_at": "2026-11-11 05:23:10"
                         }
                     ]
                 },
@@ -2703,16 +2703,16 @@
                     "service_id": 89,
                     "assignee_id": null,
                     "close_reason": null,
-                    "created_at": "2026-05-30 03:15:03",
-                    "updated_at": "2026-06-10 05:36:09",
+                    "created_at": "2026-05-31 03:15:03",
+                    "updated_at": "2026-06-11 05:36:09",
                     "replies": [
                         {
                             "id": 104,
                             "ticket_id": 35,
                             "user_id": 1,
-                            "content": "这是演练版中的示例回复，用于演示界面效果。",
+                            "content": "这是在线演示中的示例回复，用于演示界面效果。",
                             "is_staff": 0,
-                            "created_at": "2026-11-10 01:09:37"
+                            "created_at": "2026-11-11 05:23:10"
                         }
                     ]
                 },
@@ -2726,16 +2726,16 @@
                     "service_id": 89,
                     "assignee_id": null,
                     "close_reason": null,
-                    "created_at": "2026-05-28 03:40:57",
-                    "updated_at": "2026-05-29 05:15:55",
+                    "created_at": "2026-05-29 03:40:57",
+                    "updated_at": "2026-05-30 05:15:55",
                     "replies": [
                         {
                             "id": 80,
                             "ticket_id": 32,
                             "user_id": 1,
-                            "content": "这是演练版中的示例回复，用于演示界面效果。",
+                            "content": "这是在线演示中的示例回复，用于演示界面效果。",
                             "is_staff": 0,
-                            "created_at": "2026-11-10 01:09:37"
+                            "created_at": "2026-11-11 05:23:10"
                         }
                     ]
                 },
@@ -2749,16 +2749,16 @@
                     "service_id": 88,
                     "assignee_id": null,
                     "close_reason": null,
-                    "created_at": "2026-04-20 10:20:24",
-                    "updated_at": "2026-04-20 11:02:11",
+                    "created_at": "2026-04-21 10:20:24",
+                    "updated_at": "2026-04-21 11:02:11",
                     "replies": [
                         {
                             "id": 10,
                             "ticket_id": 10,
                             "user_id": 1,
-                            "content": "这是演练版中的示例回复，用于演示界面效果。",
+                            "content": "这是在线演示中的示例回复，用于演示界面效果。",
                             "is_staff": 0,
-                            "created_at": "2026-11-10 01:09:37"
+                            "created_at": "2026-11-11 05:23:10"
                         }
                     ]
                 }
@@ -2779,10 +2779,10 @@
                     "type": "ticket_staff_reply",
                     "type_label": "工单回复",
                     "title": "演示通知 #529",
-                    "summary": "这是演练版中的示例通知。",
+                    "summary": "这是在线演示中的示例通知。",
                     "link": "/client/tickets/89",
                     "read": false,
-                    "created_at": "2026-11-06 22:58:44"
+                    "created_at": "2026-11-07 22:58:44"
                 },
                 {
                     "id": "msg-528",
@@ -2791,10 +2791,10 @@
                     "type": "ticket_opened",
                     "type_label": "工单提交",
                     "title": "演示通知 #528",
-                    "summary": "这是演练版中的示例通知。",
+                    "summary": "这是在线演示中的示例通知。",
                     "link": "/client/tickets/89",
                     "read": false,
-                    "created_at": "2026-11-06 22:58:24"
+                    "created_at": "2026-11-07 22:58:24"
                 },
                 {
                     "id": "msg-509",
@@ -2803,10 +2803,10 @@
                     "type": "service_activated",
                     "type_label": "开通提醒",
                     "title": "演示通知 #509",
-                    "summary": "这是演练版中的示例通知。",
+                    "summary": "这是在线演示中的示例通知。",
                     "link": "/client/services/350",
                     "read": false,
-                    "created_at": "2026-11-05 16:12:53"
+                    "created_at": "2026-11-06 16:12:53"
                 },
                 {
                     "id": "msg-510",
@@ -2815,10 +2815,10 @@
                     "type": "order_paid",
                     "type_label": "订购提醒",
                     "title": "演示通知 #510",
-                    "summary": "这是演练版中的示例通知。",
+                    "summary": "这是在线演示中的示例通知。",
                     "link": "/client/services/350",
                     "read": false,
-                    "created_at": "2026-11-05 16:12:53"
+                    "created_at": "2026-11-06 16:12:53"
                 }
             ],
             "unread_count": 4
@@ -2854,7 +2854,7 @@
                     "email": "demo-372@example.test",
                     "nickname": "演示用户372",
                     "display_name": "演示用户372",
-                    "created_at": "2026-03-27 21:04:29",
+                    "created_at": "2026-03-28 21:04:29",
                     "referred_at": "2026-03-26 21:04:29"
                 },
                 {
@@ -2862,7 +2862,7 @@
                     "email": "demo-368@example.test",
                     "nickname": "演示用户368",
                     "display_name": "演示用户368",
-                    "created_at": "2026-03-26 22:00:40",
+                    "created_at": "2026-03-27 22:00:40",
                     "referred_at": "2026-03-25 22:00:40"
                 }
             ]
@@ -2874,7 +2874,7 @@
                     "uid": "uc_b7ec0778bcc0",
                     "coupon_id": 16,
                     "name": "测试-0.01下限券",
-                    "description": "演练版示例优惠券 16",
+                    "description": "示例优惠券 16",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -2906,7 +2906,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:12:51",
-                    "created_at": "2026-11-08 03:12:51",
+                    "created_at": "2026-11-09 03:12:51",
                     "expires_at": null
                 },
                 {
@@ -2914,7 +2914,7 @@
                     "uid": "uc_bb40d8613e94",
                     "coupon_id": 15,
                     "name": "测试-限定他商品券",
-                    "description": "演练版示例优惠券 15",
+                    "description": "示例优惠券 15",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -2968,7 +2968,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:12:51",
-                    "created_at": "2026-11-08 03:12:51",
+                    "created_at": "2026-11-09 03:12:51",
                     "expires_at": null
                 },
                 {
@@ -2976,7 +2976,7 @@
                     "uid": "uc_8e5104d8748b",
                     "coupon_id": 14,
                     "name": "测试-仅月付券",
-                    "description": "演练版示例优惠券 14",
+                    "description": "示例优惠券 14",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3010,7 +3010,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:12:51",
-                    "created_at": "2026-11-08 03:12:51",
+                    "created_at": "2026-11-09 03:12:51",
                     "expires_at": null
                 },
                 {
@@ -3018,7 +3018,7 @@
                     "uid": "uc_ff8a299eca53",
                     "coupon_id": 13,
                     "name": "测试-仅首单券",
-                    "description": "演练版示例优惠券 13",
+                    "description": "示例优惠券 13",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3050,7 +3050,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:12:50",
-                    "created_at": "2026-11-08 03:12:50",
+                    "created_at": "2026-11-09 03:12:50",
                     "expires_at": null
                 },
                 {
@@ -3058,7 +3058,7 @@
                     "uid": "uc_d0a5b9b3aa98",
                     "coupon_id": 12,
                     "name": "测试-仅续费券",
-                    "description": "演练版示例优惠券 12",
+                    "description": "示例优惠券 12",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "renew",
@@ -3090,7 +3090,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:12:50",
-                    "created_at": "2026-11-08 03:12:50",
+                    "created_at": "2026-11-09 03:12:50",
                     "expires_at": null
                 },
                 {
@@ -3098,7 +3098,7 @@
                     "uid": "uc_79cef34ed185",
                     "coupon_id": 11,
                     "name": "测试-门槛50券",
-                    "description": "演练版示例优惠券 11",
+                    "description": "示例优惠券 11",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3130,7 +3130,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:10:35",
-                    "created_at": "2026-11-08 03:10:35",
+                    "created_at": "2026-11-09 03:10:35",
                     "expires_at": null
                 },
                 {
@@ -3138,7 +3138,7 @@
                     "uid": "uc_bacf3484f904",
                     "coupon_id": 10,
                     "name": "测试-互斥会员折扣券",
-                    "description": "演练版示例优惠券 10",
+                    "description": "示例优惠券 10",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3192,7 +3192,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:05:06",
-                    "created_at": "2026-11-08 03:05:06",
+                    "created_at": "2026-11-09 03:05:06",
                     "expires_at": null
                 },
                 {
@@ -3200,7 +3200,7 @@
                     "uid": "uc_13f10bab2eba",
                     "coupon_id": 9,
                     "name": "测试-5折封顶30券",
-                    "description": "演练版示例优惠券 9",
+                    "description": "示例优惠券 9",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3254,7 +3254,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:05:06",
-                    "created_at": "2026-11-08 03:05:06",
+                    "created_at": "2026-11-09 03:05:06",
                     "expires_at": null
                 },
                 {
@@ -3262,7 +3262,7 @@
                     "uid": "uc_1c81d5eebd0e",
                     "coupon_id": 8,
                     "name": "测试-覆盖价50券",
-                    "description": "演练版示例优惠券 8",
+                    "description": "示例优惠券 8",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3316,7 +3316,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:05:06",
-                    "created_at": "2026-11-08 03:05:06",
+                    "created_at": "2026-11-09 03:05:06",
                     "expires_at": null
                 },
                 {
@@ -3324,7 +3324,7 @@
                     "uid": "uc_c565e0102934",
                     "coupon_id": 7,
                     "name": "测试-立减20固定券",
-                    "description": "演练版示例优惠券 7",
+                    "description": "示例优惠券 7",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3378,7 +3378,7 @@
                     "used_at": "2026-11-07 03:51:07",
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:05:06",
-                    "created_at": "2026-11-08 03:05:06",
+                    "created_at": "2026-11-09 03:05:06",
                     "expires_at": null
                 },
                 {
@@ -3386,7 +3386,7 @@
                     "uid": "uc_8d0b6168a50d",
                     "coupon_id": 6,
                     "name": "测试-8折百分比券",
-                    "description": "演练版示例优惠券 6",
+                    "description": "示例优惠券 6",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -3440,7 +3440,7 @@
                     "used_at": "2026-11-07 03:07:45",
                     "revoked_at": null,
                     "granted_at": "2026-11-07 03:05:06",
-                    "created_at": "2026-11-08 03:05:06",
+                    "created_at": "2026-11-09 03:05:06",
                     "expires_at": null
                 },
                 {
@@ -3448,7 +3448,7 @@
                     "uid": "uc_7c07975d1d1f",
                     "coupon_id": 4,
                     "name": "五一优惠",
-                    "description": "演练版示例优惠券 4",
+                    "description": "示例优惠券 4",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -4561,20 +4561,20 @@
                     ],
                     "billing_cycles": [],
                     "billing_cycle_text": "全部周期可用",
-                    "validity_text": "2026-04-28 16:00 - 2026-05-04 16:00",
+                    "validity_text": "2026-04-28 16:00 - 2026-05-05 16:00",
                     "claimed_at": "2026-05-03 10:25:25",
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": null,
-                    "created_at": "2026-05-04 10:25:25",
-                    "expires_at": "2026-05-04 16:00:00"
+                    "created_at": "2026-05-05 10:25:25",
+                    "expires_at": "2026-05-05 16:00:00"
                 },
                 {
                     "id": 6,
                     "uid": "uc_5489cb91234f",
                     "coupon_id": 3,
                     "name": "新人优惠",
-                    "description": "演练版示例优惠券 3",
+                    "description": "示例优惠券 3",
                     "distribution_type": "public",
                     "distribution_type_label": "公开优惠券",
                     "discount_scope": "first_month",
@@ -5540,7 +5540,7 @@
                     "used_at": null,
                     "revoked_at": null,
                     "granted_at": null,
-                    "created_at": "2026-05-04 10:25:19",
+                    "created_at": "2026-05-05 10:25:19",
                     "expires_at": null
                 }
             ],
@@ -5560,7 +5560,7 @@
                     "title": "关于美国裸金属物理服务器（CN2区）带宽调整的通知",
                     "slug": "cn2",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -5570,9 +5570,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 50,
-                    "publish_at": "2026-07-14 14:02:23",
+                    "publish_at": "2026-07-15 14:02:23",
                     "last_published_at": "2026-07-13 14:02:23",
-                    "created_at": "2026-07-14 14:02:23"
+                    "created_at": "2026-07-15 14:02:23"
                 },
                 {
                     "id": 23,
@@ -5584,7 +5584,7 @@
                     "title": "关于美国45.205.X.X节点及湖北十堰机房维护的重要通知",
                     "slug": "45205xx",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -5594,9 +5594,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 18,
-                    "publish_at": "2026-07-04 13:39:10",
+                    "publish_at": "2026-07-05 13:39:10",
                     "last_published_at": "2026-07-03 13:39:10",
-                    "created_at": "2026-07-04 13:39:10"
+                    "created_at": "2026-07-05 13:39:10"
                 },
                 {
                     "id": 21,
@@ -5608,7 +5608,7 @@
                     "title": "【关于全面推行实名认证的通知】",
                     "slug": "notice-b8xbhjls",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方政策",
                     "category": "官方政策",
                     "category_slug": "notice-4",
@@ -5618,9 +5618,9 @@
                     "is_pinned": 0,
                     "is_recommended": 1,
                     "view_count": 50,
-                    "publish_at": "2026-05-28 08:01:53",
+                    "publish_at": "2026-05-29 08:01:53",
                     "last_published_at": "2026-05-27 08:01:53",
-                    "created_at": "2026-05-28 08:01:53"
+                    "created_at": "2026-05-29 08:01:53"
                 },
                 {
                     "id": 15,
@@ -5632,7 +5632,7 @@
                     "title": "创欧云计算 · 国庆狂欢盛典",
                     "slug": "notice-14",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -5642,9 +5642,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 546,
-                    "publish_at": "2025-10-02 03:47:41",
+                    "publish_at": "2025-10-03 03:47:41",
                     "last_published_at": "2025-10-01 03:47:41",
-                    "created_at": "2025-10-02 03:49:28"
+                    "created_at": "2025-10-03 03:49:28"
                 },
                 {
                     "id": 14,
@@ -5656,7 +5656,7 @@
                     "title": "关于自动续费的说明",
                     "slug": "notice-13",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -5666,9 +5666,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 371,
-                    "publish_at": "2025-09-20 01:41:44",
+                    "publish_at": "2025-09-21 01:41:44",
                     "last_published_at": "2025-09-19 01:41:44",
-                    "created_at": "2025-09-20 01:42:29"
+                    "created_at": "2025-09-21 01:42:29"
                 },
                 {
                     "id": 16,
@@ -5680,7 +5680,7 @@
                     "title": "宁波，成都，德阳业务调整",
                     "slug": "notice-9",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "官方通知",
                     "category": "官方通知",
                     "category_slug": "notice-6",
@@ -5690,9 +5690,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 503,
-                    "publish_at": "2025-06-23 21:15:37",
+                    "publish_at": "2025-06-24 21:15:37",
                     "last_published_at": "2025-06-22 21:15:37",
-                    "created_at": "2025-06-23 21:16:46"
+                    "created_at": "2025-06-24 21:16:46"
                 }
             ],
             "help_articles": [
@@ -5706,7 +5706,7 @@
                     "title": "Linux 带宽测速脚本",
                     "slug": "linux",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -5716,9 +5716,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 27,
-                    "publish_at": "2026-06-01 02:29:11",
+                    "publish_at": "2026-06-02 02:29:11",
                     "last_published_at": "2026-05-31 02:29:11",
-                    "created_at": "2026-06-01 02:29:11"
+                    "created_at": "2026-06-02 02:29:11"
                 },
                 {
                     "id": 11,
@@ -5730,7 +5730,7 @@
                     "title": "win登录到远程Linux服务器",
                     "slug": "winlinux-12",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "帮助",
                     "category": "帮助",
                     "category_slug": "help-5",
@@ -5740,9 +5740,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 533,
-                    "publish_at": "2025-08-24 09:02:07",
+                    "publish_at": "2025-08-25 09:02:07",
                     "last_published_at": "2025-08-23 09:02:07",
-                    "created_at": "2025-08-24 09:02:43"
+                    "created_at": "2025-08-25 09:02:43"
                 },
                 {
                     "id": 12,
@@ -5754,7 +5754,7 @@
                     "title": "各产品测试IP",
                     "slug": "ip-10",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -5764,9 +5764,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 747,
-                    "publish_at": "2025-08-17 04:09:56",
+                    "publish_at": "2025-08-18 04:09:56",
                     "last_published_at": "2025-08-16 04:09:56",
-                    "created_at": "2025-08-17 04:10:12"
+                    "created_at": "2025-08-18 04:10:12"
                 },
                 {
                     "id": 13,
@@ -5778,7 +5778,7 @@
                     "title": "各线路介绍",
                     "slug": "help-1",
                     "summary": null,
-                    "excerpt": "演练版示例摘要",
+                    "excerpt": "示例摘要",
                     "category_name": "介绍",
                     "category": "介绍",
                     "category_slug": "help-3",
@@ -5788,9 +5788,9 @@
                     "is_pinned": 0,
                     "is_recommended": 0,
                     "view_count": 689,
-                    "publish_at": "2025-01-21 09:30:16",
+                    "publish_at": "2025-01-22 09:30:16",
                     "last_published_at": "2025-01-20 09:30:16",
-                    "created_at": "2025-01-21 09:30:47"
+                    "created_at": "2025-01-22 09:30:47"
                 }
             ],
             "notice_categories": [
@@ -5800,7 +5800,7 @@
                     "type": "notice",
                     "name": "官方政策",
                     "slug": "notice-4",
-                    "description": "演练版示例分类 7",
+                    "description": "示例分类 7",
                     "articles_count": 4
                 },
                 {
@@ -5809,7 +5809,7 @@
                     "type": "notice",
                     "name": "官方通知",
                     "slug": "notice-6",
-                    "description": "演练版示例分类 8",
+                    "description": "示例分类 8",
                     "articles_count": 6
                 }
             ],
@@ -5820,7 +5820,7 @@
                     "type": "help",
                     "name": "介绍",
                     "slug": "help-3",
-                    "description": "演练版示例分类 5",
+                    "description": "示例分类 5",
                     "articles_count": 2
                 },
                 {
@@ -5829,7 +5829,7 @@
                     "type": "help",
                     "name": "帮助",
                     "slug": "help-5",
-                    "description": "演练版示例分类 6",
+                    "description": "示例分类 6",
                     "articles_count": 2
                 }
             ]
@@ -5849,7 +5849,7 @@
                 "billing_cycle_label": "月付",
                 "amount": "100.00",
                 "expires_at": null,
-                "created_at": "2026-11-08 03:51:07",
+                "created_at": "2026-11-09 03:51:07",
                 "auto_renew": 0,
                 "suspended_reason": null,
                 "remark": "",
@@ -5874,7 +5874,7 @@
                     "invoice_no": "zd202611070350544227",
                     "order_no": "dd202611070350544227",
                     "status": 1,
-                    "paid_at": "2026-11-08 03:51:07"
+                    "paid_at": "2026-11-09 03:51:07"
                 },
                 "upstream": {
                     "host_id": 0,
@@ -5967,8 +5967,8 @@
             "selected_label": "",
             "range": {
                 "preset": "3h",
-                "start": 1794147002976,
-                "end": 1794157802976
+                "start": 1794162211204,
+                "end": 1794173011204
             },
             "chart": null,
             "summary": null
@@ -6004,8 +6004,8 @@
                 "assignee_id": null,
                 "close_reason": null,
                 "close_reason_label": null,
-                "created_at": "2026-11-06 22:58:24",
-                "updated_at": "2026-11-06 22:58:44",
+                "created_at": "2026-11-07 22:58:24",
+                "updated_at": "2026-11-07 22:58:44",
                 "user": {
                     "id": 1,
                     "email": "demo-1@example.test",
@@ -6076,7 +6076,7 @@
                     "discount": "20.00",
                     "paid_amount": "18.50",
                     "payable_amount": "0.00",
-                    "paid_at": "2026-11-08 03:51:07"
+                    "paid_at": "2026-11-09 03:51:07"
                 },
                 "order": null,
                 "product": {
@@ -6197,7 +6197,7 @@
                         "amount": "18.50",
                         "status": 1,
                         "status_label": "已支付",
-                        "paid_at": "2026-11-08 03:51:07",
+                        "paid_at": "2026-11-09 03:51:07",
                         "refund_method": "",
                         "refund_method_label": "",
                         "refund_reason": "",
@@ -6233,8 +6233,8 @@
                 ],
                 "logs": [],
                 "timestamps": {
-                    "created_at": "2026-11-08 03:50:54",
-                    "updated_at": "2026-11-08 03:51:07"
+                    "created_at": "2026-11-09 03:50:54",
+                    "updated_at": "2026-11-09 03:51:07"
                 }
             }
         }

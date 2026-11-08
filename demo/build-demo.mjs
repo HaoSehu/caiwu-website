@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 拼装演练版到官网 dist/demo/：
+ * 拼装在线演示到官网 dist/demo/：
  *   dist/demo/index.html        入口页（demo/index.html）
  *   dist/demo/data/*.json       脱敏数据集（demo/data/，提交在官网仓库）
  *   dist/demo/{admin,console,www}/  三端 demo 产物（构建自 E:\caiwu 对应 workspace）
