@@ -60,11 +60,12 @@ const npmBin = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 // dist/ 会被官网 npm run build 整体重写；本脚本每次都自己重建官网产物，
 // 否则任何一次 build 都会把上一轮的 dist/demo 冲掉（截图脚本、CI 都会触发）。
-// 用 build:app（纯 vite 构建）而非 build：demo 拼装只关心静态产物，
-// 不需要 SEO 生成/校验那一步。
+// 优先用 build:app（纯 vite 构建，不跑 SEO 生成）；仓库里还没有该脚本时退回 build。
 if (!options.skipSiteBuild) {
-  console.log('构建官网主站...');
-  const siteBuild = spawnSync(npmBin, ['run', 'build:app'], {
+  const siteScripts = JSON.parse(readFileSync(path.join(siteRoot, 'package.json'), 'utf8')).scripts || {};
+  const siteBuildScript = siteScripts['build:app'] ? 'build:app' : 'build';
+  console.log(`构建官网主站（npm run ${siteBuildScript}）...`);
+  const siteBuild = spawnSync(npmBin, ['run', siteBuildScript], {
     cwd: siteRoot,
     stdio: 'inherit',
     shell: process.platform === 'win32',
