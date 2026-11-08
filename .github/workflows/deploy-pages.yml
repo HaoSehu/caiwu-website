@@ -21,7 +21,7 @@ concurrency:
 # 演练版构建固定引用的 caiwu 提交。
 # 升级演练版时改这一处；固定 ref 可避免 caiwu main 上进行中的改动破坏官网发布。
 env:
-  CAIWU_REF: a4b1645e
+  CAIWU_REF: 22c96849
 
 jobs:
   build:
