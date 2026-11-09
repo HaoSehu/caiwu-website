@@ -13,16 +13,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// 截图会随教程迭代更新，文件名不变；带上构建版本号避免 CDN 命中旧图。
-const IMAGE_REV = '20261109a'
-
 const props = defineProps<{
   src: string
   alt: string
   caption: string
 }>()
 
-const url = computed(() => `/shots/${props.src}?v=${IMAGE_REV}`)
+// 图片文件名自带版本后缀；CDN 会忽略查询串，因此不再附加 ?v=
+const url = computed(() => `/shots/${props.src}`)
 </script>
 
 <style scoped>

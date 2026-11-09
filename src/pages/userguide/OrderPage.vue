@@ -61,8 +61,8 @@
 
         <section class="blk">
           <h2>客户看到的选配页</h2>
-          <DocShot src="www-home.webp" alt="官网首页" caption="官网门户 · 首页" />
-          <DocShot src="admin-orders.webp" alt="订单列表" caption="全部订单：订单状态与实付金额，详情可核对配置与定价快照" />
+          <DocShot src="www-home-v2.webp" alt="官网首页" caption="官网门户 · 首页" />
+          <DocShot src="admin-orders-v2.webp" alt="订单列表" caption="全部订单：订单状态与实付金额，详情可核对配置与定价快照" />
         </section>
       </DocPage>
     </UserShell>

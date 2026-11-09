@@ -33,7 +33,7 @@
         <section class="blk">
           <h2>后台全貌</h2>
           <DocShot
-            src="admin-dashboard.webp"
+            src="admin-dashboard-v2.webp"
             alt="管理端数据看板"
             caption="管理端首页：数据看板、待办中心与收入趋势"
           />

@@ -129,12 +129,12 @@
 
         <section class="blk">
           <h2>日常界面</h2>
-          <DocShot src="admin-orders.webp" alt="全部订单" caption="全部订单：订单号、用户、产品、类型、计费周期、实付金额与状态" />
-          <DocShot src="admin-invoices.webp" alt="账单管理" caption="账单管理：账单号、账单项目、计费周期、实付金额与状态" />
-          <DocShot src="admin-services.webp" alt="服务列表" caption="服务列表：服务、主机信息、用户、配置、状态、计费与到期时间" />
-          <DocShot src="admin-tickets.webp" alt="工单列表" caption="工单列表：标题、用户、处理人、状态、优先级与分类" />
-          <DocShot src="admin-users.webp" alt="用户列表" caption="用户列表：手机号 / 邮箱、昵称、余额、已开通服务与注册时间" />
-          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="网关日志：网关、业务 key、操作、商户单号、交易号与 Trace ID" />
+          <DocShot src="admin-orders-v2.webp" alt="全部订单" caption="全部订单：订单号、用户、产品、类型、计费周期、实付金额与状态" />
+          <DocShot src="admin-invoices-v2.webp" alt="账单管理" caption="账单管理：账单号、账单项目、计费周期、实付金额与状态" />
+          <DocShot src="admin-services-v2.webp" alt="服务列表" caption="服务列表：服务、主机信息、用户、配置、状态、计费与到期时间" />
+          <DocShot src="admin-tickets-v2.webp" alt="工单列表" caption="工单列表：标题、用户、处理人、状态、优先级与分类" />
+          <DocShot src="admin-users-v2.webp" alt="用户列表" caption="用户列表：手机号 / 邮箱、昵称、余额、已开通服务与注册时间" />
+          <DocShot src="admin-logs-gateway-v2.webp" alt="网关日志" caption="网关日志：网关、业务 key、操作、商户单号、交易号与 Trace ID" />
         </section>
       </DocPage>
     </SectionShell>

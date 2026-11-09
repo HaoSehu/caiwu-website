@@ -44,12 +44,12 @@
 
         <section class="blk">
           <h2>设置界面</h2>
-          <DocShot src="admin-staff.webp" alt="员工管理" caption="员工管理：账号、邮箱、昵称、角色与权限项数" />
-          <DocShot src="admin-roles.webp" alt="角色权限" caption="角色权限：角色、权限范围与员工数" />
-          <DocShot src="admin-account-policy.webp" alt="账户策略" caption="账户策略：强制实名、手机号与邮箱三项开关" />
-          <DocShot src="admin-automation.webp" alt="自动化策略" caption="自动化策略：服务生命周期与账单提醒参数" />
-          <DocShot src="admin-system-database.webp" alt="数据库状态" caption="数据库状态：表名、行数、大小与更新时间" />
-          <DocShot src="admin-plugins-payment.webp" alt="集成插件" caption="集成插件 · 支付渠道：七类能力域共用同一套安装、配置与启用流程" />
+          <DocShot src="admin-staff-v2.webp" alt="员工管理" caption="员工管理：账号、邮箱、昵称、角色与权限项数" />
+          <DocShot src="admin-roles-v2.webp" alt="角色权限" caption="角色权限：角色、权限范围与员工数" />
+          <DocShot src="admin-account-policy-v2.webp" alt="账户策略" caption="账户策略：强制实名、手机号与邮箱三项开关" />
+          <DocShot src="admin-automation-v2.webp" alt="自动化策略" caption="自动化策略：服务生命周期与账单提醒参数" />
+          <DocShot src="admin-system-database-v2.webp" alt="数据库状态" caption="数据库状态：表名、行数、大小与更新时间" />
+          <DocShot src="admin-plugins-payment-v2.webp" alt="集成插件" caption="集成插件 · 支付渠道：七类能力域共用同一套安装、配置与启用流程" />
         </section>
       </DocPage>
     </UserShell>

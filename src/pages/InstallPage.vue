@@ -71,7 +71,7 @@
           <h2>装好之后长这样</h2>
           <p class="lead">管理端首页。数据看板、待办中心与收入趋势是登录后的第一屏。</p>
           <DocShot
-            src="admin-dashboard.webp"
+            src="admin-dashboard-v2.webp"
             alt="管理端数据看板"
             caption="数据看板：今日与本月营业额、待办中心、商品收入占比与每日收入趋势"
           />

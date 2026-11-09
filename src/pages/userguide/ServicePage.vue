@@ -57,9 +57,9 @@
 
         <section class="blk">
           <h2>服务与工单界面</h2>
-          <DocShot src="admin-services.webp" alt="服务列表" caption="服务列表：服务、主机信息、用户、配置、状态与到期时间" />
-          <DocShot src="admin-tickets.webp" alt="工单列表" caption="工单列表：标题、用户、处理人、状态与优先级" />
-          <DocShot src="www-help.webp" alt="帮助中心" caption="官网门户 · 帮助中心" />
+          <DocShot src="admin-services-v2.webp" alt="服务列表" caption="服务列表：服务、主机信息、用户、配置、状态与到期时间" />
+          <DocShot src="admin-tickets-v2.webp" alt="工单列表" caption="工单列表：标题、用户、处理人、状态与优先级" />
+          <DocShot src="www-help-v2.webp" alt="帮助中心" caption="官网门户 · 帮助中心" />
         </section>
       </DocPage>
     </UserShell>

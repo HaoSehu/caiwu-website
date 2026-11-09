@@ -91,7 +91,7 @@
           <h2>站点的默认外观</h2>
           <p class="lead">还没有填配置时，后台侧边栏与顶部已经可用；下面所有配置项都在这个界面里完成。</p>
           <DocShot
-            src="admin-dashboard.webp"
+            src="admin-dashboard-v2.webp"
             alt="管理端默认界面"
             caption="管理端默认界面：侧边栏与数据看板"
           />

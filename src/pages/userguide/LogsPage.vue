@@ -34,10 +34,10 @@
 
         <section class="blk">
           <h2>日志界面</h2>
-          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="网关日志：网关、业务 key、操作、商户单号、交易号、Trace ID 与结果" />
-          <DocShot src="admin-logs-sms.webp" alt="短信日志" caption="短信日志：接收信息、模板编号、内容摘要、状态与错误信息" />
-          <DocShot src="admin-logs-tasks.webp" alt="自动任务" caption="自动任务日志：任务、状态、级别、耗时与摘要" />
-          <DocShot src="admin-schedules.webp" alt="定时任务" caption="定时任务：任务名称、刷新周期、最后执行、状态与下次执行" />
+          <DocShot src="admin-logs-gateway-v2.webp" alt="网关日志" caption="网关日志：网关、业务 key、操作、商户单号、交易号、Trace ID 与结果" />
+          <DocShot src="admin-logs-sms-v2.webp" alt="短信日志" caption="短信日志：接收信息、模板编号、内容摘要、状态与错误信息" />
+          <DocShot src="admin-logs-tasks-v2.webp" alt="自动任务" caption="自动任务日志：任务、状态、级别、耗时与摘要" />
+          <DocShot src="admin-schedules-v2.webp" alt="定时任务" caption="定时任务：任务名称、刷新周期、最后执行、状态与下次执行" />
         </section>
       </DocPage>
     </UserShell>

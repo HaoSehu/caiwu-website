@@ -98,12 +98,12 @@
 
         <section class="blk">
           <h2>设置界面</h2>
-          <DocShot src="admin-site-info.webp" alt="站点设置" caption="站点设置 · 基础信息：站点名称、Logo、Favicon、官方 QQ 群与服务条款链接" />
-          <DocShot src="admin-site-hero.webp" alt="首页 Banner" caption="站点设置 · 首页 Banner：轮播图文与跳转链接" />
-          <DocShot src="admin-account-policy.webp" alt="账户策略" caption="账户策略：是否强制开启实名、绑定手机号、绑定邮箱" />
-          <DocShot src="admin-staff.webp" alt="员工管理" caption="员工管理：账号、角色、权限项数与最近登录" />
-          <DocShot src="admin-roles.webp" alt="角色权限" caption="角色权限：角色、权限范围与员工数" />
-          <DocShot src="admin-notifications.webp" alt="消息配置" caption="消息配置：按消息类型维护邮件、短信与站内消息的启用状态" />
+          <DocShot src="admin-site-info-v2.webp" alt="站点设置" caption="站点设置 · 基础信息：站点名称、Logo、Favicon、官方 QQ 群与服务条款链接" />
+          <DocShot src="admin-site-hero-v2.webp" alt="首页 Banner" caption="站点设置 · 首页 Banner：轮播图文与跳转链接" />
+          <DocShot src="admin-account-policy-v2.webp" alt="账户策略" caption="账户策略：是否强制开启实名、绑定手机号、绑定邮箱" />
+          <DocShot src="admin-staff-v2.webp" alt="员工管理" caption="员工管理：账号、角色、权限项数与最近登录" />
+          <DocShot src="admin-roles-v2.webp" alt="角色权限" caption="角色权限：角色、权限范围与员工数" />
+          <DocShot src="admin-notifications-v2.webp" alt="消息配置" caption="消息配置：按消息类型维护邮件、短信与站内消息的启用状态" />
         </section>
       </DocPage>
     </SectionShell>

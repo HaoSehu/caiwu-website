@@ -35,22 +35,22 @@
         <section class="blk">
           <h2>每个阶段的界面</h2>
           <DocShot
-            src="admin-site-info.webp"
+            src="admin-site-info-v2.webp"
             alt="站点信息设置"
             caption="基础信息：站点名称、Logo、Favicon、官方 QQ 群与服务条款链接"
           />
           <DocShot
-            src="admin-products.webp"
+            src="admin-products-v2.webp"
             alt="商品目录"
             caption="商品目录：左侧分类树，右侧商品列表，顶部可新建商品与二级分组"
           />
           <DocShot
-            src="admin-staff.webp"
+            src="admin-staff-v2.webp"
             alt="员工管理"
             caption="员工管理：账号 / 邮箱、昵称、角色、权限项数与状态"
           />
           <DocShot
-            src="admin-roles.webp"
+            src="admin-roles-v2.webp"
             alt="角色权限"
             caption="角色权限：角色、权限范围、员工数与更新时间"
           />

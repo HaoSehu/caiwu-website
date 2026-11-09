@@ -38,32 +38,32 @@
         <section class="blk">
           <h2>配置所在的页面</h2>
           <DocShot
-            src="admin-site-info.webp"
+            src="admin-site-info-v2.webp"
             alt="站点设置"
             caption="站点设置 · 基础信息：站点名称、Logo、Favicon、官方 QQ 群与服务条款链接"
           />
           <DocShot
-            src="admin-plugins-payment.webp"
+            src="admin-plugins-payment-v2.webp"
             alt="支付渠道插件"
             caption="支付渠道插件：支付宝当面付与易支付，均已启用且最近运行成功"
           />
           <DocShot
-            src="admin-plugins-sms.webp"
+            src="admin-plugins-sms-v2.webp"
             alt="短信发送插件"
             caption="短信发送插件：插件启用状态与最近运行结果"
           />
           <DocShot
-            src="admin-plugins-mail.webp"
+            src="admin-plugins-mail-v2.webp"
             alt="邮件发送插件"
             caption="邮件发送插件：SMTP 与多 SMTP 轮询"
           />
           <DocShot
-            src="admin-plugins-captcha.webp"
+            src="admin-plugins-captcha-v2.webp"
             alt="人机验证插件"
             caption="人机验证插件：GeeTest 与 VAPTCHA"
           />
           <DocShot
-            src="admin-plugins-upstream.webp"
+            src="admin-plugins-upstream-v2.webp"
             alt="上游开通插件"
             caption="上游开通插件：各供应商保持独立 provider key"
           />
