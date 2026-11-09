@@ -73,7 +73,7 @@
           <DocShot
             src="admin-dashboard.webp"
             alt="管理端数据看板"
-            caption="管理端 · 数据看板：今日营业额、待办中心、商品收入占比与每日收入趋势"
+            caption="数据看板：今日与本月营业额、待办中心、商品收入占比与每日收入趋势"
           />
         </section>
       </DocPage>

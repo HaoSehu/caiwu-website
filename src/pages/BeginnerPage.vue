@@ -35,7 +35,7 @@
           <DocShot
             src="admin-dashboard.webp"
             alt="管理端数据看板"
-            caption="登录后的第一屏：数据看板与待办中心，左侧是九个功能分区"
+            caption="管理端首页：数据看板、待办中心与收入趋势"
           />
         </section>
       </DocPage>

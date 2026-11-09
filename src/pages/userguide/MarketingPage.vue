@@ -44,9 +44,9 @@
 
         <section class="blk">
           <h2>营销界面</h2>
-          <DocShot src="admin-coupons.webp" alt="优惠券列表" caption="商品营销 · 优惠券列表：面额、类型、领取与使用情况" />
-          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广分销 · 推广概览：累计奖励、冻结中与已提现" />
-          <DocShot src="admin-referral-withdrawals.webp" alt="提现审核" caption="推广分销 · 提现审核：通过或驳回都写台账" />
+          <DocShot src="admin-coupons.webp" alt="优惠券列表" caption="优惠券列表：优惠券信息、优惠规则、使用情况、状态与有效期" />
+          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广概览：累计销售额、奖励与提现汇总" />
+          <DocShot src="admin-referral-withdrawals.webp" alt="提现审核" caption="提现审核：申请用户、提现金额、提现方式、状态与处理信息" />
         </section>
       </DocPage>
     </UserShell>

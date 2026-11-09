@@ -11381,7 +11381,7 @@
                     "connection": {
                         "base_url": "https://www.meidecloud.com",
                         "base_url_configured": true,
-                        "account_name": "19083287894"
+                        "account_name": "demo_upstream_account"
                     },
                     "credentials": {
                         "api_credential_configured": true,
@@ -11397,13 +11397,13 @@
                         "priority": 0,
                         "base_url": "https://www.meidecloud.com",
                         "base_url_configured": true,
-                        "account_name": "19083287894",
+                        "account_name": "demo_upstream_account",
                         "credentials_configured": [],
                         "last_checked_at": "2026-10-04 16:59:06",
                         "last_check_status": "success"
                     },
                     "contact_name": "演示联系人2",
-                    "contact_phone": "13900000000",
+                    "contact_phone": "13800000000",
                     "contact_email": "supplier-2@example.test",
                     "website": null,
                     "status": 1,
@@ -11424,7 +11424,7 @@
                             {
                                 "key": "username",
                                 "label": "用户名",
-                                "value": "19083287894"
+                                "value": "demo_upstream_account"
                             },
                             {
                                 "key": "upstream_balance",
@@ -11469,7 +11469,7 @@
                     "connection": {
                         "base_url": "https://cloud.jdidc.cn",
                         "base_url_configured": true,
-                        "account_name": "19083287894"
+                        "account_name": "demo_upstream_account"
                     },
                     "credentials": {
                         "api_credential_configured": true,
@@ -11485,13 +11485,13 @@
                         "priority": 0,
                         "base_url": "https://cloud.jdidc.cn",
                         "base_url_configured": true,
-                        "account_name": "19083287894",
+                        "account_name": "demo_upstream_account",
                         "credentials_configured": [],
                         "last_checked_at": "2026-10-04 16:59:07",
                         "last_check_status": "success"
                     },
                     "contact_name": "演示联系人1",
-                    "contact_phone": "13900000000",
+                    "contact_phone": "13800000000",
                     "contact_email": "supplier-1@example.test",
                     "website": null,
                     "status": 1,
@@ -11512,7 +11512,7 @@
                             {
                                 "key": "username",
                                 "label": "用户名",
-                                "value": "19083287894"
+                                "value": "demo_upstream_account"
                             },
                             {
                                 "key": "upstream_balance",

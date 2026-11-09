@@ -129,12 +129,12 @@
 
         <section class="blk">
           <h2>日常界面</h2>
-          <DocShot src="admin-orders.webp" alt="全部订单" caption="财务管理 · 全部订单：按新购、续费、附加配置切换，支持搜索与日期筛选" />
-          <DocShot src="admin-invoices.webp" alt="账单管理" caption="财务管理 · 账单管理：待支付、已支付、部分已付、已取消、已退款五态" />
-          <DocShot src="admin-services.webp" alt="服务列表" caption="服务与工单 · 服务管理：实例状态、到期时间与续费" />
-          <DocShot src="admin-tickets.webp" alt="工单列表" caption="服务与工单 · 工单管理：开启、客户回复、员工回复、已关闭" />
-          <DocShot src="admin-users.webp" alt="用户列表" caption="用户管理 · 用户列表：余额、等级与注册时间" />
-          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="日志中心 · 网关日志：支付回调与上游调用的请求、应答与 Trace ID" />
+          <DocShot src="admin-orders.webp" alt="全部订单" caption="全部订单：订单号、用户、产品、类型、计费周期、实付金额与状态" />
+          <DocShot src="admin-invoices.webp" alt="账单管理" caption="账单管理：账单号、账单项目、计费周期、实付金额与状态" />
+          <DocShot src="admin-services.webp" alt="服务列表" caption="服务列表：服务、主机信息、用户、配置、状态、计费与到期时间" />
+          <DocShot src="admin-tickets.webp" alt="工单列表" caption="工单列表：标题、用户、处理人、状态、优先级与分类" />
+          <DocShot src="admin-users.webp" alt="用户列表" caption="用户列表：手机号 / 邮箱、昵称、余额、已开通服务与注册时间" />
+          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="网关日志：网关、业务 key、操作、商户单号、交易号与 Trace ID" />
         </section>
       </DocPage>
     </SectionShell>

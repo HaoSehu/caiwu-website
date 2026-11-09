@@ -82,10 +82,10 @@
 
         <section class="blk">
           <h2>财务界面</h2>
-          <DocShot src="admin-orders.webp" alt="全部订单" caption="全部订单：订单号、用户、产品、计费周期、实付金额与状态" />
-          <DocShot src="admin-invoices.webp" alt="账单管理" caption="账单管理：账单是结算凭证，行项目与支付明细挂在账单下" />
-          <DocShot src="admin-recharges.webp" alt="充值记录" caption="充值记录：余额充值写台账，不产生第三方支付记录" />
-          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广分销 · 推广概览：返佣冻结与释放、提现审核" />
+          <DocShot src="admin-orders.webp" alt="全部订单" caption="全部订单：订单号、用户、产品/服务、类型、计费周期、实付金额与状态" />
+          <DocShot src="admin-invoices.webp" alt="账单管理" caption="账单管理：账单号、账单项目、类型、计费周期与实付金额" />
+          <DocShot src="admin-recharges.webp" alt="充值记录" caption="充值记录：支付单号、渠道、关联账单、金额、到账与状态" />
+          <DocShot src="admin-referral.webp" alt="推广概览" caption="推广概览：累计销售额、奖励与提现汇总" />
         </section>
       </DocPage>
     </UserShell>

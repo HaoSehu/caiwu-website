@@ -23,9 +23,9 @@
 
         <section class="blk">
           <h2>排查时打开的位置</h2>
-          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="支付与上游问题：先看网关日志的请求、应答与结果" />
-          <DocShot src="admin-services.webp" alt="服务列表" caption="服务不开通：看实例状态与开通记录" />
-          <DocShot src="admin-logs-sms.webp" alt="短信日志" caption="收不到验证码：先确认短信日志有没有发送记录" />
+          <DocShot src="admin-logs-gateway.webp" alt="网关日志" caption="支付与上游问题：先看网关日志的网关、操作、单号与结果" />
+          <DocShot src="admin-services.webp" alt="服务列表" caption="服务不开通：看服务列表的状态与开通时间" />
+          <DocShot src="admin-logs-sms.webp" alt="短信日志" caption="收不到验证码：先确认短信日志的模板、状态与错误信息" />
         </section>
       </DocPage>
     </UserShell>

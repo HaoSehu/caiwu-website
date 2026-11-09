@@ -40,32 +40,32 @@
           <DocShot
             src="admin-site-info.webp"
             alt="站点设置"
-            caption="站点内容 · 站点设置：站点名称、Logo、备案号与联系方式"
+            caption="站点设置 · 基础信息：站点名称、Logo、Favicon、官方 QQ 群与服务条款链接"
           />
           <DocShot
             src="admin-plugins-payment.webp"
             alt="支付渠道插件"
-            caption="系统设置 · 集成插件 · 支付渠道：已启用与已安装的插件分状态展示，管理与检测在同一张卡片上"
+            caption="支付渠道插件：支付宝当面付与易支付，均已启用且最近运行成功"
           />
           <DocShot
             src="admin-plugins-sms.webp"
             alt="短信发送插件"
-            caption="系统设置 · 集成插件 · 短信发送：签名、模板与验证码限流都在插件配置里"
+            caption="短信发送插件：插件启用状态与最近运行结果"
           />
           <DocShot
             src="admin-plugins-mail.webp"
             alt="邮件发送插件"
-            caption="系统设置 · 集成插件 · 邮件发送：SMTP 与多 SMTP 轮询"
+            caption="邮件发送插件：SMTP 与多 SMTP 轮询"
           />
           <DocShot
             src="admin-plugins-captcha.webp"
             alt="人机验证插件"
-            caption="系统设置 · 集成插件 · 人机验证：GeeTest 与 Vaptcha"
+            caption="人机验证插件：GeeTest 与 VAPTCHA"
           />
           <DocShot
             src="admin-plugins-upstream.webp"
             alt="上游开通插件"
-            caption="系统设置 · 集成插件 · 上游开通：KangHostx、ZJMF Finance 各保持独立 provider key"
+            caption="上游开通插件：各供应商保持独立 provider key"
           />
         </section>
       </DocPage>

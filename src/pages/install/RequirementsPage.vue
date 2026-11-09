@@ -93,7 +93,7 @@
           <DocShot
             src="admin-dashboard.webp"
             alt="管理端默认界面"
-            caption="管理端 · 首次登录后的侧边栏与数据看板"
+            caption="管理端默认界面：侧边栏与数据看板"
           />
         </section>
       </DocPage>

@@ -51,10 +51,10 @@
 
         <section class="blk">
           <h2>商品管理界面</h2>
-          <DocShot src="admin-products.webp" alt="商品目录" caption="商品目录：左侧分类树，右侧商品列表，新建商品与二级分组在顶部" />
-          <DocShot src="admin-specs.webp" alt="规格管理" caption="规格管理：CPU 与内存的组合模板，供产品配置引用" />
-          <DocShot src="admin-cpu-models.webp" alt="CPU 型号管理" caption="CPU 型号管理：独立维护，避免各产品重复填写" />
-          <DocShot src="admin-product-suppliers.webp" alt="上游供应" caption="上游供应：绑定供应商后可批量同步价格与库存" />
+          <DocShot src="admin-products.webp" alt="商品目录" caption="商品目录：左侧分类树、右侧商品列表，顶部新建商品与二级分组" />
+          <DocShot src="admin-specs.webp" alt="规格管理" caption="规格管理：实例规格文本、说明、状态与绑定配置" />
+          <DocShot src="admin-cpu-models.webp" alt="CPU 型号管理" caption="CPU 型号管理：左侧 CPU 分组（amd / Intel / 随机），右侧该分组下的型号" />
+          <DocShot src="admin-product-suppliers.webp" alt="上游供应" caption="上游供应：提供商、状态与关键信息" />
         </section>
       </DocPage>
     </UserShell>

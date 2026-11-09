@@ -51,13 +51,13 @@
           <DocShot
             src="admin-schedules.webp"
             alt="定时任务列表"
-            caption="日志中心 · 定时任务：最后执行与下次执行时间对齐，说明心跳正常"
+            caption="定时任务：任务名称、刷新周期、最后执行、状态与下次执行"
           />
           <p class="lead" style="margin-top: var(--s5)">自动任务日志记录每次执行的耗时与结果；失败会有明确的错误摘要。</p>
           <DocShot
             src="admin-logs-tasks.webp"
             alt="自动任务日志"
-            caption="日志中心 · 自动任务：每次心跳、队列认领与任务执行的耗时与摘要"
+            caption="自动任务日志：任务、状态、级别、耗时与摘要"
           />
         </section>
       </DocPage>

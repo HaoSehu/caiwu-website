@@ -34,11 +34,11 @@
 
         <section class="blk">
           <h2>内容管理界面</h2>
-          <DocShot src="admin-site-info.webp" alt="站点设置" caption="站点配置 · 站点设置" />
-          <DocShot src="admin-site-hero.webp" alt="首页 Banner" caption="站点配置 · 首页 Banner" />
-          <DocShot src="admin-notices.webp" alt="系统公告" caption="内容管理 · 系统公告：发布后立即出现在官网与控制台" />
-          <DocShot src="admin-media.webp" alt="媒体库" caption="内容管理 · 媒体库：本地与对象存储驱动统一管理" />
-          <DocShot src="www-notices.webp" alt="官网公告" caption="官网门户 · 官方公告：客户侧看到的样子" />
+          <DocShot src="admin-site-info.webp" alt="站点设置" caption="站点设置 · 基础信息" />
+          <DocShot src="admin-site-hero.webp" alt="首页 Banner" caption="站点设置 · 首页 Banner" />
+          <DocShot src="admin-notices.webp" alt="系统公告" caption="系统公告：标题、分类、状态、属性与发布时间" />
+          <DocShot src="admin-media.webp" alt="媒体库" caption="媒体库：预览、文件、类型、存储区、体积与上传时间" />
+          <DocShot src="www-notices.webp" alt="官网公告" caption="官网门户 · 官方公告" />
         </section>
       </DocPage>
     </UserShell>
